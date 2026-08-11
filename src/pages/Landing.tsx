@@ -244,15 +244,18 @@ export default function Landing() {
                 <div className="group relative aspect-square overflow-hidden rounded-none border border-border bg-card">
                   <Scene3D className="absolute inset-0" />
                   <span className="pointer-events-none absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-foreground">
-                    Scene_01 — particles
+                    Scene_01 — robot
                   </span>
                   <span className="pointer-events-none absolute bottom-4 right-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                    Move cursor to tilt
+                    Frontend Engineering
                   </span>
                 </div>
                 <div className="mt-3 flex flex-col gap-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
-                  <span>Torus knot · 1,300 points</span>
-                  <span>{profile.initials} · 2026</span>
+                  <span>Frontend Engineer Bot · Low-poly 3D</span>
+                  <span>
+                    Frontend engineering — fast, accessible, pixel-perfect
+                    interfaces.
+                  </span>
                 </div>
               </div>
             </Reveal>
