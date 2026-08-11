@@ -66,6 +66,30 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
+export type Capability = {
+  title: string;
+  description: string;
+};
+
+// What clients can hire you for — shown at the top of the resume section.
+export const capabilities: Capability[] = [
+  {
+    title: "SaaS Product Builds",
+    description:
+      "End-to-end SaaS platforms with Next.js, React, and TypeScript — scoped, built, deployed, and handed over with documentation.",
+  },
+  {
+    title: "AI & Agentic Features",
+    description:
+      "LLM-powered workflows and multi-agent systems that plug into existing products — research, automation, and decision support.",
+  },
+  {
+    title: "APIs & Backends",
+    description:
+      "FastAPI and Node.js backends with validated, documented REST APIs and clean data models your frontend can trust.",
+  },
+];
+
 export type SkillGroup = { label: string; items: string[] };
 
 export const skills: SkillGroup[] = [

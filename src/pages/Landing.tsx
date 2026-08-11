@@ -1,12 +1,14 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
 
 import { ContactForm } from "@/components/ContactForm";
-import { Wireframe3D } from "@/components/Wireframe3D";
+import { Scene3D } from "@/components/Scene3D";
+import { TiltCard } from "@/components/TiltCard";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/use-auth";
 import {
+  capabilities,
   education,
   experience,
   profile,
@@ -95,12 +97,33 @@ function AvailabilityDot() {
 /* Landing                                                             */
 /* ------------------------------------------------------------------ */
 
+const MARQUEE_ITEMS = [
+  ...profile.stack,
+  "SaaS",
+  "AI Agents",
+  "REST APIs",
+  "Pydantic",
+  "Vercel",
+];
+
 export default function Landing() {
   const { isAuthenticated } = useAuth();
   const year = new Date().getFullYear();
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
+      {/* Scroll progress bar */}
+      <motion.div
+        style={{ scaleX: progress }}
+        className="fixed inset-x-0 top-0 z-50 h-0.5 origin-left bg-foreground print:hidden"
+      />
+
       {/* ---------------------------------------------------------- */}
       {/* Header                                                      */}
       {/* ---------------------------------------------------------- */}
@@ -215,26 +238,43 @@ export default function Landing() {
               </Reveal>
             </div>
 
-            {/* 3D scene */}
+            {/* 3D scene — particle torus knot */}
             <Reveal delay={0.2}>
               <div className="relative mx-auto w-full max-w-md">
                 <div className="group relative aspect-square overflow-hidden rounded-none border border-border bg-card">
-                  <Wireframe3D className="absolute inset-0" />
+                  <Scene3D className="absolute inset-0" />
                   <span className="pointer-events-none absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-foreground">
-                    Scene_01 — wireframe
+                    Scene_01 — particles
                   </span>
                   <span className="pointer-events-none absolute bottom-4 right-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                     Move cursor to tilt
                   </span>
                 </div>
                 <div className="mt-3 flex flex-col gap-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
-                  <span>Icosahedron</span>
+                  <span>Torus knot · 1,300 points</span>
                   <span>{profile.initials} · 2026</span>
                 </div>
               </div>
             </Reveal>
           </div>
         </section>
+
+        {/* -------------------------------------------------------- */}
+        {/* Tech marquee                                               */}
+        {/* -------------------------------------------------------- */}
+        <div
+          aria-hidden
+          className="overflow-hidden border-y border-border py-3.5 print:hidden"
+        >
+          <div className="animate-marquee flex w-max items-center gap-10 whitespace-nowrap font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
+              <span key={i} className="flex items-center gap-10">
+                <span>{item}</span>
+                <span className="text-foreground/25">·</span>
+              </span>
+            ))}
+          </div>
+        </div>
 
         {/* -------------------------------------------------------- */}
         {/* Resume                                                     */}
@@ -258,6 +298,25 @@ export default function Landing() {
                 }
               />
             </Reveal>
+
+            {/* Capabilities — what clients can hire you for */}
+            <div className="mt-16 flex flex-col border-t border-border">
+              {capabilities.map((cap, i) => (
+                <Reveal key={cap.title} delay={i * 0.05}>
+                  <div className="flex flex-col gap-3 border-b border-border py-8">
+                    <p className="font-mono text-xs text-muted-foreground">
+                      0{i + 1}
+                    </p>
+                    <h3 className="font-display text-xl font-medium tracking-tight">
+                      {cap.title}
+                    </h3>
+                    <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
+                      {cap.description}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
 
             {/* Experience */}
             <div className="mt-16">
@@ -444,9 +503,11 @@ export default function Landing() {
                 </div>
               </Reveal>
 
-              {/* Contact form */}
+              {/* Contact form — subtle 3D tilt on hover */}
               <Reveal delay={0.1}>
-                <ContactForm />
+                <TiltCard>
+                  <ContactForm />
+                </TiltCard>
               </Reveal>
             </div>
           </div>
