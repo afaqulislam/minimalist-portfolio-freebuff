@@ -80,7 +80,24 @@ class RootErrorBoundary extends React.Component<
   }
 }
 
-const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
+// The Convex client needs a full deployment URL (https://<name>.convex.cloud),
+// provisioned into VITE_CONVEX_URL by `convex dev`. Guard against a missing or
+// unparseable value (e.g. a misconfigured key in the platform's Keys UI) by
+// falling back to this project's dev deployment.
+const CONVEX_DEPLOYMENT_URL = "https://wooden-axolotl-901.convex.cloud";
+const configuredConvexUrl = (import.meta.env.VITE_CONVEX_URL as string) ?? "";
+const convexUrl = /^https:\/\/[a-z0-9-]+\.convex\.cloud$/i.test(
+  configuredConvexUrl,
+)
+  ? configuredConvexUrl
+  : CONVEX_DEPLOYMENT_URL;
+if (convexUrl !== configuredConvexUrl) {
+  console.warn(
+    "[Convex] VITE_CONVEX_URL is missing or unparseable; falling back to",
+    CONVEX_DEPLOYMENT_URL,
+  );
+}
+const convex = new ConvexReactClient(convexUrl);
 
 
 
