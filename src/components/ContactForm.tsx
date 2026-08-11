@@ -89,7 +89,7 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       className="flex h-full flex-col gap-6 rounded-none border border-border bg-card p-6 sm:p-8"
     >
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-name"
@@ -170,14 +170,14 @@ export function ContactForm() {
 
       {error && <p className="text-sm text-destructive">{error}</p>}
 
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-col gap-3">
         <p className="text-xs text-muted-foreground">
           Replies within 1 business day.
         </p>
         <Button
           type="submit"
           disabled={status === "sending"}
-          className="cursor-pointer rounded-none bg-foreground text-background hover:bg-foreground/90"
+          className="w-full cursor-pointer rounded-none bg-foreground text-background hover:bg-foreground/90"
         >
           {status === "sending" ? "Sending…" : "Send message"}
         </Button>

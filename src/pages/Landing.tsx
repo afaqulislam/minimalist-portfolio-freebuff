@@ -55,7 +55,7 @@ function SectionHeading({
   aside?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-4">
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
           {index} — {label}
@@ -69,7 +69,7 @@ function SectionHeading({
           </p>
         )}
       </div>
-      {aside}
+      {aside && <div className="flex">{aside}</div>}
     </div>
   );
 }
@@ -105,10 +105,10 @@ export default function Landing() {
       {/* Header                                                      */}
       {/* ---------------------------------------------------------- */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md print:hidden">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-4">
           <a
             href="#top"
-            className="flex items-baseline gap-2.5 font-display text-sm font-semibold tracking-tight"
+            className="flex w-fit items-baseline gap-2.5 font-display text-sm font-semibold tracking-tight"
           >
             {profile.initials}
             <span className="text-muted-foreground">/</span>
@@ -116,7 +116,7 @@ export default function Landing() {
               {profile.name}
             </span>
           </a>
-          <nav className="flex items-center gap-6 text-sm">
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <a
               href="#resume"
               className="text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
@@ -152,7 +152,7 @@ export default function Landing() {
         {/* Hero                                                      */}
         {/* -------------------------------------------------------- */}
         <section className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid items-center gap-16 py-24 sm:py-32 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+          <div className="flex flex-col gap-16 py-20 sm:py-28">
             <div>
               <Reveal>
                 <p className="flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
@@ -184,35 +184,40 @@ export default function Landing() {
               </Reveal>
 
               <Reveal delay={0.32}>
-                <div className="mt-10 flex flex-wrap items-center gap-3">
-                  <Button asChild className="cursor-pointer rounded-none bg-foreground text-background hover:bg-foreground/90">
+                <div className="mt-10 flex w-full max-w-sm flex-col gap-3">
+                  <Button
+                    asChild
+                    className="w-full cursor-pointer rounded-none bg-foreground text-background hover:bg-foreground/90"
+                  >
                     <a href="#resume">View resume</a>
                   </Button>
-                  <Button asChild variant="outline" className="cursor-pointer rounded-none">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full cursor-pointer rounded-none"
+                  >
                     <a href="#contact">Get in touch</a>
                   </Button>
                 </div>
               </Reveal>
 
               <Reveal delay={0.4}>
-                <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-border pt-6 font-mono text-xs text-muted-foreground">
+                <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 font-mono text-xs text-muted-foreground">
                   <span>{profile.location}</span>
-                  <span className="hidden text-border sm:inline">·</span>
                   <a
                     href={`mailto:${profile.email}`}
-                    className="underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                    className="w-fit underline-offset-4 transition-colors hover:text-foreground hover:underline"
                   >
                     {profile.email}
                   </a>
-                  <span className="hidden text-border sm:inline">·</span>
                   <span>// {profile.stack.join(" · ")}</span>
                 </div>
               </Reveal>
             </div>
 
             {/* 3D scene */}
-            <Reveal delay={0.2} className="lg:justify-self-end">
-              <div className="relative w-full max-w-md lg:w-[420px]">
+            <Reveal delay={0.2}>
+              <div className="relative mx-auto w-full max-w-md">
                 <div className="group relative aspect-square overflow-hidden rounded-none border border-border bg-card">
                   <Wireframe3D className="absolute inset-0" />
                   <span className="pointer-events-none absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-foreground">
@@ -222,7 +227,7 @@ export default function Landing() {
                     Move cursor to tilt
                   </span>
                 </div>
-                <div className="mt-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                <div className="mt-3 flex flex-col gap-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
                   <span>Icosahedron</span>
                   <span>{profile.initials} · 2026</span>
                 </div>
@@ -259,7 +264,7 @@ export default function Landing() {
               {experience.map((job, i) => (
                 <Reveal key={job.company} delay={i * 0.05}>
                   <article
-                    className={`grid gap-4 py-12 md:grid-cols-[190px_1fr] md:gap-10 ${
+                    className={`flex flex-col gap-4 py-12 ${
                       i > 0 ? "border-t border-border" : ""
                     }`}
                   >
@@ -300,7 +305,7 @@ export default function Landing() {
               <Reveal>
                 <SubLabel>Skills</SubLabel>
               </Reveal>
-              <div className="mt-10 grid gap-x-12 gap-y-12 sm:grid-cols-2">
+              <div className="mt-10 flex flex-col gap-12">
                 {skills.map((group, i) => (
                   <Reveal key={group.label} delay={i * 0.05}>
                     <div className="flex flex-col gap-3">
@@ -335,7 +340,7 @@ export default function Landing() {
                   {education.map((item, i) => (
                     <Reveal key={item.school} delay={i * 0.05}>
                       <div
-                        className={`flex flex-col gap-2 py-6 sm:flex-row sm:items-baseline sm:justify-between ${
+                        className={`flex flex-col gap-2 py-6 ${
                           i > 0 ? "border-t border-border" : ""
                         }`}
                       >
@@ -384,7 +389,7 @@ export default function Landing() {
               />
             </Reveal>
 
-            <div className="mt-16 grid gap-16 lg:grid-cols-[1fr_1.25fr] lg:gap-20">
+            <div className="mt-16 flex flex-col gap-16">
               {/* Contact details */}
               <Reveal>
                 <div className="flex flex-col gap-12">
@@ -452,7 +457,7 @@ export default function Landing() {
       {/* Footer                                                      */}
       {/* ---------------------------------------------------------- */}
       <footer className="border-t border-border print:hidden">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-12 lg:flex-row lg:items-start lg:justify-between">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-12">
           <div className="flex flex-col gap-2">
             <p className="font-display text-sm font-semibold tracking-tight">
               {profile.initials}
@@ -466,7 +471,7 @@ export default function Landing() {
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               Elsewhere
             </p>
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <div className="flex flex-col gap-2">
               {profile.socials.map((social) => (
                 <a
                   key={social.label}

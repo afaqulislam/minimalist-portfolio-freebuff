@@ -21,22 +21,22 @@ export default function Dashboard() {
     <main className="min-h-screen bg-background text-foreground">
       <div className="mx-auto w-full max-w-4xl px-6 py-14 sm:py-20">
         {/* Header */}
-        <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
+        <header className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
               Signed in as {user?.name || user?.email || "owner"}
             </p>
-            <h1 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl">
+            <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
               Inbox
             </h1>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Messages sent through the contact form on your portfolio.
             </p>
           </div>
           <Button
             type="button"
             variant="outline"
-            className="cursor-pointer rounded-none self-start"
+            className="w-full cursor-pointer rounded-none self-start sm:w-fit"
             onClick={handleSignOut}
           >
             <LogOut className="size-4" />
@@ -75,7 +75,7 @@ export default function Dashboard() {
             <ul className="divide-y divide-border border-t border-border">
               {messages.map((message) => (
                 <li key={message._id} className="py-8">
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <div className="flex flex-col gap-1">
                     <p className="text-sm font-medium">
                       {message.name}
                       {message.company ? (

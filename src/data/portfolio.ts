@@ -19,10 +19,9 @@ export const profile = {
     "COO at Neofyx and a full-stack developer who takes SaaS ideas from first commit to production. I build AI-powered products end to end — polished Next.js interfaces, FastAPI backends, and the agentic systems in between — so clients get one person who owns the whole stack.",
   location: "Sindh, Pakistan",
   availability: "Available for freelance projects",
-  // TODO: replace with the email address you actually check.
-  email: "hello@afaqulislam.dev",
+  email: "afaqulislam707@gmail.com",
   // Recipient for contact-form notifications (via the built-in email integration).
-  notifyEmail: "hello@afaqulislam.dev",
+  notifyEmail: "afaqulislam707@gmail.com",
   stack: ["Next.js", "React", "TypeScript", "FastAPI", "Python", "Docker"],
   socials: [
     { label: "GitHub", href: "https://github.com/afaqulislam" },
