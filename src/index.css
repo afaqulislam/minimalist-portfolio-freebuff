@@ -132,8 +132,9 @@
 @theme {
   --font-sans: "Inter", "SF Pro Text", system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "SF Mono", "JetBrains Mono", "Fira Code", ui-monospace,
-    "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, "Cascadia Code",
+    "Roboto Mono", Menlo, Consolas, monospace;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
 }
 
 html {
@@ -144,6 +145,42 @@ html {
 ::selection {
   background: var(--foreground);
   color: var(--background);
+}
+
+/* Subtle dot-grid texture used behind the hero. */
+@utility bg-grid {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--foreground) 14%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Print — "Download CV" exports a clean, single-page resume           */
+/* ------------------------------------------------------------------ */
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  /* Reveal animations leave inline opacity/transform on elements; force a
+     clean, fully-visible printout. */
+  * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #fff !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

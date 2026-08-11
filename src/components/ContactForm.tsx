@@ -162,7 +162,7 @@ export function ContactForm() {
           required
           minLength={10}
           maxLength={5000}
-          placeholder="Tell me about your project — timeline, scope, budget…"
+          placeholder="Tell me about your project — SaaS build, AI feature, or something else entirely…"
           className={`${inputClass} min-h-36 flex-1 resize-none`}
           disabled={status === "sending"}
         />

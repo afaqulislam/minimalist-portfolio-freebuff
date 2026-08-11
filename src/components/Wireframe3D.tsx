@@ -82,6 +82,8 @@ function rotX(v: Vec3, a: number): Vec3 {
 
 export function Wireframe3D({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const targetX = useRef(0);
+  const targetY = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -99,6 +101,8 @@ export function Wireframe3D({ className }: { className?: string }) {
     let visible = true;
     let frame = 0;
     let color = "#18181b";
+    let px = 0; // smoothed pointer offset, -1..1
+    let py = 0;
 
     const readColor = () => {
       const value = getComputedStyle(document.documentElement)
@@ -153,6 +157,12 @@ export function Wireframe3D({ className }: { className?: string }) {
       if (frame % 90 === 0) readColor();
       frame++;
 
+      // Ease the rotation toward the pointer for a subtle parallax tilt.
+      if (!reducedMotion) {
+        px += (targetX.current - px) * 0.05;
+        py += (targetY.current - py) * 0.05;
+      }
+
       ctx.clearRect(0, 0, width, height);
       const cx = width / 2;
       const cy = height / 2;
@@ -163,8 +173,8 @@ export function Wireframe3D({ className }: { className?: string }) {
       ctx.strokeStyle = color;
       ctx.fillStyle = color;
 
-      const yaw = t * 0.35;
-      const pitch = 0.5 + Math.sin(t * 0.25) * 0.18;
+      const yaw = t * 0.35 + px * 0.4;
+      const pitch = 0.5 + Math.sin(t * 0.25) * 0.18 + py * 0.3;
 
       // Inner octahedron, counter-rotating.
       drawShape(
@@ -255,7 +265,22 @@ export function Wireframe3D({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div role="img" aria-label="Rotating 3D wireframe" className={className}>
+    <div
+      role="img"
+      aria-label="Rotating 3D wireframe"
+      className={className}
+      onPointerMove={(event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) return;
+        // Normalized pointer position in [-1, 1], origin at center.
+        targetX.current = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        targetY.current = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+      }}
+      onPointerLeave={() => {
+        targetX.current = 0;
+        targetY.current = 0;
+      }}
+    >
       <canvas ref={canvasRef} className="block h-full w-full" />
     </div>
   );
