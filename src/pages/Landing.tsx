@@ -292,11 +292,13 @@ export default function Landing() {
                 description="Selected work building SaaS and AI products. Full work history and references are available on request."
                 aside={
                   <Button
+                    asChild
                     variant="outline"
                     className="cursor-pointer rounded-none print:hidden"
-                    onClick={() => window.print()}
                   >
-                    Download CV
+                    <a href={profile.cvUrl} download>
+                      Download CV (PDF)
+                    </a>
                   </Button>
                 }
               />

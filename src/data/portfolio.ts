@@ -22,6 +22,9 @@ export const profile = {
   email: "afaqulislam707@gmail.com",
   // Recipient for contact-form notifications (via the built-in email integration).
   notifyEmail: "afaqulislam707@gmail.com",
+  // Path to your CV PDF, hosted in /public. Drop your file at public/cv.pdf
+  // (or update this path to match your file's name).
+  cvUrl: "/cv.pdf",
   stack: ["Next.js", "React", "TypeScript", "FastAPI", "Python", "Docker"],
   socials: [
     { label: "GitHub", href: "https://github.com/afaqulislam" },
