@@ -8,10 +8,12 @@ import { TiltCard } from "@/components/TiltCard";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/use-auth";
 import {
+  achievements,
   capabilities,
   education,
   experience,
   profile,
+  projects,
   skills,
 } from "@/data/portfolio";
 
@@ -364,6 +366,31 @@ export default function Landing() {
               ))}
             </div>
 
+            {/* Selected Projects */}
+            <div className="mt-6 border-t border-border pt-16">
+              <Reveal>
+                <SubLabel>Selected Projects</SubLabel>
+              </Reveal>
+              <div className="mt-10 flex flex-col items-center">
+                {projects.map((project, i) => (
+                  <Reveal key={project.name} delay={i * 0.05}>
+                    <div
+                      className={`flex flex-col items-center gap-2 py-6 text-center ${
+                        i > 0 ? "border-t border-border" : ""
+                      }`}
+                    >
+                      <h3 className="font-display text-lg font-medium tracking-tight">
+                        {project.name}
+                      </h3>
+                      <p className="mx-auto max-w-2xl text-sm leading-6 text-muted-foreground">
+                        {project.description}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
             {/* Skills */}
             <div className="mt-6 border-t border-border pt-16">
               <Reveal>
@@ -424,6 +451,31 @@ export default function Landing() {
               </div>
             )}
 
+            {/* Achievements */}
+            <div className="mt-16 border-t border-border pt-16">
+              <Reveal>
+                <SubLabel>Achievements</SubLabel>
+              </Reveal>
+              <div className="mt-10 flex flex-col items-center">
+                {achievements.map((item, i) => (
+                  <Reveal key={item.title} delay={i * 0.05}>
+                    <div
+                      className={`flex flex-col items-center gap-2 py-6 text-center ${
+                        i > 0 ? "border-t border-border" : ""
+                      }`}
+                    >
+                      <h3 className="font-display text-lg font-medium tracking-tight">
+                        {item.title}
+                      </h3>
+                      <p className="mx-auto max-w-2xl text-sm leading-6 text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
             <Reveal>
               <p className="mt-10 text-center text-sm text-muted-foreground">
                 Full CV and references —{" "}
@@ -464,6 +516,16 @@ export default function Landing() {
                       className="mt-3 block font-display text-lg font-medium tracking-tight underline-offset-4 transition-colors hover:text-muted-foreground hover:underline break-words sm:text-2xl"
                     >
                       {profile.email}
+                    </a>
+                  </div>
+
+                  <div>
+                    <SubLabel>Phone</SubLabel>
+                    <a
+                      href={`tel:${profile.phone}`}
+                      className="mt-3 block font-display text-lg font-medium tracking-tight underline-offset-4 transition-colors hover:text-muted-foreground hover:underline break-words sm:text-2xl"
+                    >
+                      {profile.phone}
                     </a>
                   </div>
 
