@@ -57,8 +57,8 @@ function SectionHeading({
   aside?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col items-center gap-6 text-center">
+      <div className="flex flex-col items-center gap-4">
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
           {index} — {label}
         </p>
@@ -66,19 +66,19 @@ function SectionHeading({
           {title}
         </h2>
         {description && (
-          <p className="max-w-xl text-sm leading-6 text-muted-foreground">
+          <p className="mx-auto max-w-xl text-sm leading-6 text-muted-foreground">
             {description}
           </p>
         )}
       </div>
-      {aside && <div className="flex">{aside}</div>}
+      {aside && <div className="flex justify-center">{aside}</div>}
     </div>
   );
 }
 
 function SubLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
+    <p className="text-center font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
       {children}
     </p>
   );
@@ -128,10 +128,10 @@ export default function Landing() {
       {/* Header                                                      */}
       {/* ---------------------------------------------------------- */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md print:hidden">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-4">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-6 py-4 text-center">
           <a
             href="#top"
-            className="flex w-fit items-baseline gap-2.5 font-display text-sm font-semibold tracking-tight"
+            className="flex w-fit items-baseline justify-center gap-2.5 font-display text-sm font-semibold tracking-tight"
           >
             {profile.initials}
             <span className="text-muted-foreground">/</span>
@@ -139,7 +139,7 @@ export default function Landing() {
               {profile.name}
             </span>
           </a>
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
             <a
               href="#resume"
               className="text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
@@ -175,10 +175,10 @@ export default function Landing() {
         {/* Hero                                                      */}
         {/* -------------------------------------------------------- */}
         <section className="mx-auto w-full max-w-6xl px-6">
-          <div className="flex flex-col gap-16 py-20 sm:py-28">
-            <div>
+          <div className="flex flex-col items-center gap-16 py-20 text-center sm:py-28">
+            <div className="flex w-full flex-col items-center">
               <Reveal>
-                <p className="flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
+                <p className="flex items-center justify-center gap-2.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
                   <AvailabilityDot />
                   {profile.availability}
                 </p>
@@ -201,7 +201,7 @@ export default function Landing() {
               </Reveal>
 
               <Reveal delay={0.24}>
-                <p className="mt-6 max-w-xl text-[15px] leading-7 text-muted-foreground">
+                <p className="mx-auto mt-6 max-w-xl text-[15px] leading-7 text-muted-foreground">
                   {profile.summary}
                 </p>
               </Reveal>
@@ -225,7 +225,7 @@ export default function Landing() {
               </Reveal>
 
               <Reveal delay={0.4}>
-                <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 font-mono text-xs text-muted-foreground">
+                <div className="mt-12 flex w-full max-w-md flex-col items-center gap-2 border-t border-border pt-6 font-mono text-xs text-muted-foreground">
                   <span>{profile.location}</span>
                   <a
                     href={`mailto:${profile.email}`}
@@ -238,7 +238,7 @@ export default function Landing() {
               </Reveal>
             </div>
 
-            {/* 3D scene — particle torus knot */}
+            {/* 3D scene — robot head */}
             <Reveal delay={0.2}>
               <div className="relative mx-auto w-full max-w-md">
                 <div className="group relative aspect-square overflow-hidden rounded-none border border-border bg-card">
@@ -250,7 +250,7 @@ export default function Landing() {
                     Frontend Engineering
                   </span>
                 </div>
-                <div className="mt-3 flex flex-col gap-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                <div className="mt-3 flex flex-col gap-1 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
                   <span>Frontend Engineer Bot · Low-poly 3D</span>
                   <span>
                     Frontend engineering — fast, accessible, pixel-perfect
@@ -306,14 +306,14 @@ export default function Landing() {
             <div className="mt-16 flex flex-col border-t border-border">
               {capabilities.map((cap, i) => (
                 <Reveal key={cap.title} delay={i * 0.05}>
-                  <div className="flex flex-col gap-3 border-b border-border py-8">
+                  <div className="flex flex-col items-center gap-3 border-b border-border py-8 text-center">
                     <p className="font-mono text-xs text-muted-foreground">
                       0{i + 1}
                     </p>
                     <h3 className="font-display text-xl font-medium tracking-tight">
                       {cap.title}
                     </h3>
-                    <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
+                    <p className="mx-auto max-w-2xl text-sm leading-6 text-muted-foreground">
                       {cap.description}
                     </p>
                   </div>
@@ -326,7 +326,7 @@ export default function Landing() {
               {experience.map((job, i) => (
                 <Reveal key={job.company} delay={i * 0.05}>
                   <article
-                    className={`flex flex-col gap-4 py-12 ${
+                    className={`flex flex-col items-center gap-4 py-12 text-center ${
                       i > 0 ? "border-t border-border" : ""
                     }`}
                   >
@@ -335,21 +335,21 @@ export default function Landing() {
                         {job.period}
                       </p>
                     </div>
-                    <div>
+                    <div className="flex w-full flex-col items-center">
                       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                         {job.company}
                       </p>
                       <h3 className="mt-2 font-display text-xl font-medium tracking-tight">
                         {job.role}
                       </h3>
-                      <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">
+                      <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">
                         {job.summary}
                       </p>
-                      <ul className="mt-6 max-w-2xl space-y-3">
+                      <ul className="mx-auto mt-6 max-w-2xl space-y-3">
                         {job.points.map((point) => (
                           <li
                             key={point}
-                            className="flex gap-3 text-sm leading-6 text-foreground/80"
+                            className="flex justify-center gap-3 text-sm leading-6 text-foreground/80"
                           >
                             <span className="mt-[9px] size-1 shrink-0 rounded-full bg-foreground/60" />
                             <span>{point}</span>
@@ -367,10 +367,10 @@ export default function Landing() {
               <Reveal>
                 <SubLabel>Skills</SubLabel>
               </Reveal>
-              <div className="mt-10 flex flex-col gap-12">
+              <div className="mt-10 flex flex-col items-center gap-12">
                 {skills.map((group, i) => (
                   <Reveal key={group.label} delay={i * 0.05}>
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col items-center gap-3 text-center">
                       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                         {group.label}
                       </p>
@@ -398,11 +398,11 @@ export default function Landing() {
                 <Reveal>
                   <SubLabel>Education</SubLabel>
                 </Reveal>
-                <div className="mt-10">
+                <div className="mt-10 flex flex-col items-center">
                   {education.map((item, i) => (
                     <Reveal key={item.school} delay={i * 0.05}>
                       <div
-                        className={`flex flex-col gap-2 py-6 ${
+                        className={`flex flex-col items-center gap-2 py-6 text-center ${
                           i > 0 ? "border-t border-border" : ""
                         }`}
                       >
@@ -423,7 +423,7 @@ export default function Landing() {
             )}
 
             <Reveal>
-              <p className="mt-10 text-sm text-muted-foreground">
+              <p className="mt-10 text-center text-sm text-muted-foreground">
                 Full CV and references —{" "}
                 <a
                   href={`mailto:${profile.email}?subject=CV%20request`}
@@ -451,10 +451,10 @@ export default function Landing() {
               />
             </Reveal>
 
-            <div className="mt-16 flex flex-col gap-16">
+            <div className="mt-16 flex flex-col items-center gap-16">
               {/* Contact details */}
               <Reveal>
-                <div className="flex flex-col gap-12">
+                <div className="flex flex-col items-center gap-12 text-center">
                   <div>
                     <SubLabel>Email</SubLabel>
                     <a
@@ -478,7 +478,7 @@ export default function Landing() {
 
                   <div>
                     <SubLabel>Elsewhere</SubLabel>
-                    <ul className="mt-4 space-y-1">
+                    <ul className="mt-4 flex flex-col items-center space-y-1">
                       {profile.socials.map((social) => (
                         <li key={social.label}>
                           <a
@@ -497,8 +497,8 @@ export default function Landing() {
                     </ul>
                   </div>
 
-                  <div className="border-t border-border pt-8">
-                    <p className="flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
+                  <div className="w-full max-w-md border-t border-border pt-8">
+                    <p className="flex items-center justify-center gap-2.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
                       <AvailabilityDot />
                       {profile.availability}
                     </p>
@@ -521,8 +521,8 @@ export default function Landing() {
       {/* Footer                                                      */}
       {/* ---------------------------------------------------------- */}
       <footer className="border-t border-border print:hidden">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-12">
-          <div className="flex flex-col gap-2">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-12 text-center">
+          <div className="flex flex-col items-center gap-2">
             <p className="font-display text-sm font-semibold tracking-tight">
               {profile.initials}
             </p>
@@ -531,11 +531,11 @@ export default function Landing() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col items-center gap-3">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               Elsewhere
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col items-center gap-2">
               {profile.socials.map((social) => (
                 <a
                   key={social.label}
@@ -550,11 +550,11 @@ export default function Landing() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col items-center gap-3">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               Site
             </p>
-            <div className="flex flex-col items-start gap-2 text-sm">
+            <div className="flex flex-col items-center gap-2 text-sm">
               <a
                 href="#top"
                 className="text-muted-foreground transition-colors hover:text-foreground"

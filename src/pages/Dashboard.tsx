@@ -21,8 +21,8 @@ export default function Dashboard() {
     <main className="min-h-screen bg-background text-foreground">
       <div className="mx-auto w-full max-w-4xl px-6 py-14 sm:py-20">
         {/* Header */}
-        <header className="flex flex-col gap-6">
-          <div className="flex flex-col gap-3">
+        <header className="flex flex-col items-center gap-6 text-center">
+          <div className="flex flex-col items-center gap-3">
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
               Signed in as {user?.name || user?.email || "owner"}
             </p>
@@ -36,7 +36,7 @@ export default function Dashboard() {
           <Button
             type="button"
             variant="outline"
-            className="w-full cursor-pointer rounded-none self-start sm:w-fit"
+            className="w-full cursor-pointer rounded-none self-center sm:w-fit"
             onClick={handleSignOut}
           >
             <LogOut className="size-4" />
@@ -47,14 +47,14 @@ export default function Dashboard() {
         {/* Messages */}
         <div className="mt-12">
           {messages === undefined ? (
-            <div className="flex items-center gap-2 py-16 font-mono text-xs text-muted-foreground">
+            <div className="flex items-center justify-center gap-2 py-16 font-mono text-xs text-muted-foreground">
               <span className="size-1.5 animate-pulse rounded-full bg-foreground" />
               Loading messages…
             </div>
           ) : messages.length === 0 ? (
-            <div className="flex flex-col items-start gap-4 border border-border bg-card px-6 py-16 sm:px-10">
+            <div className="flex flex-col items-center gap-4 border border-border bg-card px-6 py-16 text-center sm:px-10">
               <InboxIcon className="size-6 text-muted-foreground" />
-              <div>
+              <div className="flex flex-col items-center gap-2">
                 <h2 className="text-lg font-medium tracking-tight">
                   No messages yet
                 </h2>
@@ -74,8 +74,8 @@ export default function Dashboard() {
           ) : (
             <ul className="divide-y divide-border border-t border-border">
               {messages.map((message) => (
-                <li key={message._id} className="py-8">
-                  <div className="flex flex-col gap-1">
+                <li key={message._id} className="py-8 text-center">
+                  <div className="flex flex-col items-center gap-1">
                     <p className="text-sm font-medium">
                       {message.name}
                       {message.company ? (
@@ -95,7 +95,7 @@ export default function Dashboard() {
                   >
                     {message.email}
                   </a>
-                  <p className="mt-4 whitespace-pre-wrap text-sm leading-6 text-foreground/85">
+                  <p className="mx-auto mt-4 max-w-2xl whitespace-pre-wrap text-sm leading-6 text-foreground/85">
                     {message.message}
                   </p>
                 </li>

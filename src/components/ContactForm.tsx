@@ -59,11 +59,11 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="flex h-full min-h-72 flex-col items-start justify-between gap-8 rounded-none border border-border bg-card p-8">
+      <div className="mx-auto flex h-full min-h-72 w-full max-w-2xl flex-col items-center justify-between gap-8 rounded-none border border-border bg-card p-8 text-center">
         <p className="text-sm text-muted-foreground">
           Your message has been sent.
         </p>
-        <div>
+        <div className="flex flex-col items-center gap-2">
           <h3 className="text-2xl font-medium tracking-tight">
             Thanks for reaching out.
           </h3>
@@ -87,7 +87,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex h-full flex-col gap-6 rounded-none border border-border bg-card p-6 sm:p-8"
+      className="mx-auto flex h-full w-full max-w-2xl flex-col gap-6 rounded-none border border-border bg-card p-6 sm:p-8"
     >
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
@@ -171,7 +171,7 @@ export function ContactForm() {
       {error && <p className="text-sm text-destructive">{error}</p>}
 
       <div className="flex flex-col gap-3">
-        <p className="text-xs text-muted-foreground">
+        <p className="text-center text-xs text-muted-foreground">
           Replies within 1 business day.
         </p>
         <Button
