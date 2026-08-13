@@ -185,7 +185,7 @@ export default function Landing() {
               </Reveal>
 
               <Reveal delay={0.08}>
-                <h1 className="mt-8 font-display text-[clamp(2.75rem,7.5vw,5.5rem)] font-semibold leading-[1.02] tracking-[-0.03em]">
+                <h1 className="mt-8 font-display text-[clamp(2.25rem,8vw,5.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] [overflow-wrap:anywhere]">
                   {profile.name}
                 </h1>
               </Reveal>
@@ -459,7 +459,7 @@ export default function Landing() {
                     <SubLabel>Email</SubLabel>
                     <a
                       href={`mailto:${profile.email}`}
-                      className="mt-3 block font-display text-xl font-medium tracking-tight underline-offset-4 transition-colors hover:text-muted-foreground hover:underline sm:text-2xl"
+                      className="mt-3 block font-display text-lg font-medium tracking-tight underline-offset-4 transition-colors hover:text-muted-foreground hover:underline break-words sm:text-2xl"
                     >
                       {profile.email}
                     </a>

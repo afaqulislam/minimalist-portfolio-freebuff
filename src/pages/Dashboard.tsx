@@ -91,7 +91,7 @@ export default function Dashboard() {
                   </div>
                   <a
                     href={`mailto:${message.email}`}
-                    className="mt-1 inline-block text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                    className="mt-1 inline-block break-all text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
                   >
                     {message.email}
                   </a>

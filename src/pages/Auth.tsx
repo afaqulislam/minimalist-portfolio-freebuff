@@ -114,9 +114,9 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
 
       
       {/* Auth Content */}
-      <div className="flex-1 flex items-center justify-center">
-        <div className="flex items-center justify-center h-full flex-col">
-        <Card className="min-w-[350px] pb-0 border shadow-md">
+      <div className="flex-1 flex items-center justify-center px-4 py-8">
+        <div className="flex items-center justify-center h-full flex-col w-full">
+        <Card className="w-full max-w-[400px] pb-0 border shadow-md">
           {step === "signIn" ? (
             <>
               <CardHeader className="text-center">
@@ -212,6 +212,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                       onChange={setOtp}
                       maxLength={6}
                       disabled={isLoading}
+                      containerClassName="gap-1 sm:gap-2"
                       onKeyDown={(e) => {
                         if (e.key === "Enter" && otp.length === 6 && !isLoading) {
                           // Find the closest form and submit it
@@ -224,7 +225,11 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                     >
                       <InputOTPGroup>
                         {Array.from({ length: 6 }).map((_, index) => (
-                          <InputOTPSlot key={index} index={index} />
+                          <InputOTPSlot
+                            key={index}
+                            index={index}
+                            className="h-8 w-8 sm:h-9 sm:w-9"
+                          />
                         ))}
                       </InputOTPGroup>
                     </InputOTP>
