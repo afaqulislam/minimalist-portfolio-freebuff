@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Scene3D } from "@/components/Scene3D";
 import { TiltCard } from "@/components/TiltCard";
 import { Button } from "@/components/ui/button";
+import { downloadCvPdf } from "@/lib/generateCv";
 import { useAuth } from "@/hooks/use-auth";
 import {
   achievements,
@@ -294,13 +295,11 @@ export default function Landing() {
                 description="Selected work building SaaS and AI products. Full work history and references are available on request."
                 aside={
                   <Button
-                    asChild
                     variant="outline"
                     className="cursor-pointer rounded-none print:hidden"
+                    onClick={() => downloadCvPdf()}
                   >
-                    <a href={profile.cvUrl} download>
-                      Download CV (PDF)
-                    </a>
+                    Download CV (PDF)
                   </Button>
                 }
               />
