@@ -39,7 +39,9 @@ const schema = defineSchema(
       company: v.optional(v.string()),
       message: v.string(),
       createdAt: v.number(),
-    }).index("by_createdAt", ["createdAt"]),
+    })
+      .index("by_createdAt", ["createdAt"])
+      .index("by_email_created", ["email", "createdAt"]),
   },
   {
     schemaValidation: false,

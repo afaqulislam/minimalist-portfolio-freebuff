@@ -74,6 +74,7 @@ No `.env` file is committed — keys are managed through the platform's Keys/API
 | `CONVEX_DEPLOYMENT`     | `convex` CLI target for deploy/push   | Yes (set by `convex dev`) |
 | `VLY_INTEGRATION_KEY`   | Contact-form email notifications (`src/convex/sendMessage.ts`) | Optional — messages still store without it |
 | `VLY_APP_NAME`          | App name shown in OTP emails          | Optional |
+| `FB_EMAIL_API_KEY`      | OTP sign-in emails (`src/convex/auth/emailOtp.ts`) | **Yes** — no key is hardcoded; without it OTP emails fail |
 | `JWKS`, `JWT_PRIVATE_KEY`, `SITE_URL` | Convex Auth JWT signing  | Set by the platform |
 
 ## 🌍 Deploying to Vercel
@@ -101,14 +102,13 @@ bunx convex deploy     # push functions + schema to the production deployment
 
 ## 🛡️ Security Notes
 
-- **Server-side validation** on every contact submission (`src/convex/sendMessage.ts`) — length, format, and field limits are enforced on the backend, not just the UI.
+- **Server-side validation** on every contact submission (`src/convex/sendMessage.ts` **and** `src/convex/messages.ts`) — length, format, and field limits are enforced on the backend, not just the UI. The public mutation re-validates independently, so it can't be bypassed by calling it directly.
 - **Spam honeypot** — a hidden form field (`website`) silently discards bot submissions without tipping them off.
+- **Rate limiting** — max 5 submissions per hour per email address (`messages.by_email_created` index).
 - **HTML-escaped emails** — user input is escaped before interpolation into the notification email HTML.
 - **Owner-only inbox** — `api.messages.list` returns submissions only to the authenticated account whose verified email matches the owner's address (`profile.notifyEmail`).
-- **OTP auth** — the dashboard uses email OTP (6-digit code, 15-minute expiry) via Convex Auth.
-- **Secrets** — `.env.local`, `.env`, `.vercel`, and `src/convex/_generated` are gitignored.
-
-> ⚠️ **Note for GitHub:** `src/convex/auth/emailOtp.ts` contains the Freebuff email-relay API key used to send OTP codes. This is the platform's shared relay key included in every Freebuff template — it only works with the Freebuff OTP service. If you'd prefer it out of your repo, add it as an environment variable (`FB_EMAIL_API_KEY`) in your Keys UI and update the file to read `process.env.FB_EMAIL_API_KEY`, then remove the fallback constant.
+- **OTP auth** — the dashboard uses email OTP (6-digit code, 15-minute expiry) via Convex Auth; the relay key comes from `FB_EMAIL_API_KEY`, never from source code.
+- **Secrets** — `.env.local`, `.env`, `.vercel`, and `src/convex/_generated` are gitignored, and no API keys are hardcoded anywhere in the repo.
 
 ## 📬 Owner Inbox
 
