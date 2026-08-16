@@ -13,6 +13,8 @@ import {
   capabilities,
   education,
   experience,
+  metrics,
+  process,
   profile,
   projects,
   skills,
@@ -283,6 +285,29 @@ export default function Landing() {
         </div>
 
         {/* -------------------------------------------------------- */}
+        {/* Impact metrics                                             */}
+        {/* -------------------------------------------------------- */}
+        <section className="border-b border-border print:hidden">
+          <div className="mx-auto w-full max-w-6xl px-6 py-12 sm:py-16">
+            <div className="grid grid-cols-2 gap-px overflow-hidden border border-border bg-border lg:grid-cols-4">
+              {metrics.map((metric) => (
+                <div
+                  key={metric.label}
+                  className="flex flex-col items-center gap-2.5 bg-background px-4 py-8 text-center sm:py-10"
+                >
+                  <p className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+                    {metric.value}
+                  </p>
+                  <p className="max-w-[190px] text-xs leading-5 text-muted-foreground">
+                    {metric.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* -------------------------------------------------------- */}
         {/* Resume                                                     */}
         {/* -------------------------------------------------------- */}
         <section id="resume" className="scroll-mt-20 border-t border-border">
@@ -324,6 +349,31 @@ export default function Landing() {
               ))}
             </div>
 
+            {/* How a senior engineer works */}
+            <div className="mt-16 border-t border-border pt-16">
+              <Reveal>
+                <SubLabel>How I work</SubLabel>
+              </Reveal>
+              <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+                {process.map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex flex-col items-center gap-3 bg-background px-6 py-8 text-center"
+                  >
+                    <p className="font-mono text-xs text-muted-foreground">
+                      {item.step}
+                    </p>
+                    <h3 className="font-display text-base font-medium tracking-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs leading-5 text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Experience */}
             <div className="mt-16">
               {experience.map((job, i) => (
@@ -333,15 +383,16 @@ export default function Landing() {
                       i > 0 ? "border-t border-border" : ""
                     }`}
                   >
-                    <div>
+                    <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-5">
                       <p className="font-mono text-xs text-muted-foreground">
                         {job.period}
                       </p>
-                    </div>
-                    <div className="flex w-full flex-col items-center">
+                      <span className="hidden size-1 rounded-full bg-foreground/40 sm:block" />
                       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                         {job.company}
                       </p>
+                    </div>
+                    <div className="flex w-full flex-col items-center">
                       <h3 className="mt-2 font-display text-xl font-medium tracking-tight">
                         {job.role}
                       </h3>
@@ -370,21 +421,30 @@ export default function Landing() {
               <Reveal>
                 <SubLabel>Selected Projects</SubLabel>
               </Reveal>
-              <div className="mt-10 flex flex-col items-center">
+              <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
                 {projects.map((project, i) => (
-                  <Reveal key={project.name} delay={i * 0.05}>
-                    <div
-                      className={`flex flex-col items-center gap-2 py-6 text-center ${
-                        i > 0 ? "border-t border-border" : ""
-                      }`}
-                    >
-                      <h3 className="font-display text-lg font-medium tracking-tight">
+                  <Reveal key={project.name} delay={i * 0.05} className="h-full">
+                    <article className="flex h-full flex-col border border-border bg-background p-7 text-center transition-colors hover:border-foreground/50">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                        Project_0{i + 1}
+                      </p>
+                      <h3 className="mt-4 font-display text-lg font-medium tracking-tight">
                         {project.name}
                       </h3>
-                      <p className="mx-auto max-w-2xl text-sm leading-6 text-muted-foreground">
+                      <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
                         {project.description}
                       </p>
-                    </div>
+                      <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+                        {project.stack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </article>
                   </Reveal>
                 ))}
               </div>
@@ -395,18 +455,18 @@ export default function Landing() {
               <Reveal>
                 <SubLabel>Skills</SubLabel>
               </Reveal>
-              <div className="mt-10 flex flex-col items-center gap-12">
+              <div className="mx-auto mt-10 grid w-full max-w-4xl grid-cols-1 gap-px border border-border bg-border md:grid-cols-2">
                 {skills.map((group, i) => (
-                  <Reveal key={group.label} delay={i * 0.05}>
-                    <div className="flex flex-col items-center gap-3 text-center">
+                  <Reveal key={group.label} delay={i * 0.05} className="h-full">
+                    <div className="flex h-full flex-col items-center justify-center gap-3 bg-background px-6 py-8 text-center">
                       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                         {group.label}
                       </p>
-                      <p className="text-[15px] leading-8 text-foreground">
+                      <p className="text-sm leading-7 text-foreground">
                         {group.items.map((item, idx) => (
                           <span key={item}>
                             {idx > 0 && (
-                              <span className="mx-2 text-foreground/30">
+                              <span className="mx-1.5 text-foreground/30">
                                 ·
                               </span>
                             )}

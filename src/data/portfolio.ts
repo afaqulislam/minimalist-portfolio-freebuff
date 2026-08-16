@@ -70,6 +70,58 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
+export type Metric = { value: string; label: string };
+
+// Impact metrics — quick signals of experience for clients scanning the page.
+export const metrics: Metric[] = [
+  {
+    value: "2+",
+    label: "Years of professional & freelance experience",
+  },
+  {
+    value: "10+",
+    label: "Projects, products & automation systems shipped",
+  },
+  {
+    value: "5+",
+    label: "AI models integrated into production builds",
+  },
+  {
+    value: "Top 7%",
+    label: "Ranked in competitive engineering challenges",
+  },
+];
+
+export type ProcessStep = { step: string; title: string; description: string };
+
+// How a senior engineer works — the delivery process clients can expect.
+export const process: ProcessStep[] = [
+  {
+    step: "01",
+    title: "Discover",
+    description:
+      "Dig into your goals, users, and constraints first — no code until the problem is crystal clear.",
+  },
+  {
+    step: "02",
+    title: "Architect",
+    description:
+      "Right-sized architecture: the stack, structure, and trade-offs chosen for your product, not for a resume.",
+  },
+  {
+    step: "03",
+    title: "Build & iterate",
+    description:
+      "Short, visible build cycles with regular check-ins, so you always know what's shipping and why.",
+  },
+  {
+    step: "04",
+    title: "Deploy & support",
+    description:
+      "Production deployment, monitoring, and a clear handover — plus ongoing improvements after launch.",
+  },
+];
+
 export type Capability = {
   title: string;
   description: string;
@@ -102,6 +154,7 @@ export const capabilities: Capability[] = [
 export type Project = {
   name: string;
   description: string;
+  stack: string[];
 };
 
 // Selected projects — the highlights from the CV.
@@ -110,21 +163,25 @@ export const projects: Project[] = [
     name: "CIRO AI — Multi-Agent Crisis Response System",
     description:
       "Built as part of a team for AI Seekho Phase 2, coordinating multiple AI agents to support crisis response workflows.",
+    stack: ["Python", "Multi-Agent AI", "Orchestration"],
   },
   {
     name: "Kisaan Dost AI — Crop Disease Detector",
     description:
       "AI-powered crop disease detection tool for Pakistani farmers, built on Google Gemini Vision for Google AI Seekho 2026.",
+    stack: ["Google Gemini", "Python", "AI Vision"],
   },
   {
     name: "AURELIA — Luxury Fashion E-Commerce Platform",
     description:
       "Built for the Google Build with AI 2026 workshop (GeeksforGeeks); deployed on Google Cloud Run.",
+    stack: ["Next.js", "TypeScript", "Google Cloud Run"],
   },
   {
     name: "Personal AI Employee",
     description:
       "An agentic personal-automation system built for GIAIC Hackathon 0, using Obsidian for persistent memory, Python watcher scripts, and a Qwen Code CLI reasoning engine, with tiered Gmail, WhatsApp, LinkedIn, and social-posting automation.",
+    stack: ["Python", "Qwen Code CLI", "Obsidian", "Automation"],
   },
 ];
 
