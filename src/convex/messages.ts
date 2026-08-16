@@ -1,5 +1,7 @@
 import { getAuthUserId } from "@convex-dev/auth/server";
 import { v } from "convex/values";
+
+import { profile } from "../data/portfolio";
 import { mutation, query } from "./_generated/server";
 
 /**
@@ -26,13 +28,24 @@ export const insertMessage = mutation({
 });
 
 /**
- * Message inbox — signed-in owners only. Returns the newest submissions first.
+ * Message inbox — owner only. Returns the newest submissions first.
+ *
+ * Any signed-in user could previously read every submission; now the query
+ * only returns messages when the authenticated user's verified email matches
+ * the portfolio owner's notification address.
  */
 export const list = query({
   args: {},
   handler: async (ctx) => {
     const userId = await getAuthUserId(ctx);
     if (userId === null) {
+      return [];
+    }
+    const user = await ctx.db.get(userId);
+    if (
+      !user?.email ||
+      user.email.toLowerCase() !== profile.notifyEmail.toLowerCase()
+    ) {
       return [];
     }
     return await ctx.db

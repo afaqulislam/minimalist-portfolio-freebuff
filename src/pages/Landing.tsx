@@ -458,22 +458,20 @@ export default function Landing() {
               <div className="mx-auto mt-10 grid w-full max-w-4xl grid-cols-1 gap-px border border-border bg-border md:grid-cols-2">
                 {skills.map((group, i) => (
                   <Reveal key={group.label} delay={i * 0.05} className="h-full">
-                    <div className="flex h-full flex-col items-center justify-center gap-3 bg-background px-6 py-8 text-center">
+                    <div className="flex h-full min-w-0 flex-col items-center justify-center gap-4 bg-background px-4 py-8 text-center sm:px-6">
                       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                         {group.label}
                       </p>
-                      <p className="text-sm leading-7 text-foreground">
-                        {group.items.map((item, idx) => (
-                          <span key={item}>
-                            {idx > 0 && (
-                              <span className="mx-1.5 text-foreground/30">
-                                ·
-                              </span>
-                            )}
+                      <div className="flex min-w-0 flex-wrap items-center justify-center gap-2">
+                        {group.items.map((item) => (
+                          <span
+                            key={item}
+                            className="border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-foreground/80"
+                          >
                             {item}
                           </span>
                         ))}
-                      </p>
+                      </div>
                     </div>
                   </Reveal>
                 ))}
@@ -597,27 +595,6 @@ export default function Landing() {
                         Working remotely with clients worldwide.
                       </span>
                     </p>
-                  </div>
-
-                  <div>
-                    <SubLabel>Elsewhere</SubLabel>
-                    <ul className="mt-4 flex flex-col items-center space-y-1">
-                      {profile.socials.map((social) => (
-                        <li key={social.label}>
-                          <a
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group inline-flex items-baseline gap-3 py-1 text-sm text-foreground/80 transition-colors hover:text-foreground"
-                          >
-                            <span className="font-mono text-xs text-muted-foreground transition-transform duration-200 group-hover:translate-x-1">
-                              →
-                            </span>
-                            {social.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
 
                   <div className="w-full max-w-md border-t border-border pt-8">

@@ -32,6 +32,9 @@ export function ContactForm() {
         email: String(formData.get("email") ?? ""),
         company: String(formData.get("company") ?? "") || undefined,
         message: String(formData.get("message") ?? ""),
+        // Honeypot field — bots that auto-fill hidden inputs get filtered out
+        // server-side. Humans never see it, so a filled value means spam.
+        website: String(formData.get("website") ?? ""),
         ownerEmail: profile.notifyEmail,
       });
 
@@ -89,6 +92,21 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       className="mx-auto flex h-full w-full max-w-2xl flex-col gap-6 rounded-none border border-border bg-card p-6 sm:p-8"
     >
+      {/* Honeypot — hidden from humans, tempting for spam bots. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] top-auto h-0 w-0 overflow-hidden"
+      >
+        <label htmlFor="contact-website">Leave this field empty</label>
+        <input
+          id="contact-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <label
