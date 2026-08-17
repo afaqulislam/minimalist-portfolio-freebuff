@@ -90,6 +90,12 @@ The repo is deploy-ready:
    - `VLY_APP_NAME` → your app name
 5. Deploy. `vercel.json` includes an SPA fallback rewrite so client-side routes (`/auth`, `/dashboard`) work on direct visits.
 
+> **Important:** `src/convex/_generated/` (Convex's generated TypeScript types) is **committed to the repo** — it is not gitignored. Vercel's build runs `tsc` before bundling, so the generated files must be present. They are regenerated automatically whenever you run `bunx convex dev` or `bunx convex codegen`. After changing `src/convex/schema.ts`, regenerate them and commit the updated files:
+>
+> ```bash
+> bunx convex dev --once   # regenerates src/convex/_generated
+> ```
+
 ### Deploying the Convex backend
 
 The database/functions run on Convex, not Vercel:
@@ -108,7 +114,7 @@ bunx convex deploy     # push functions + schema to the production deployment
 - **HTML-escaped emails** — user input is escaped before interpolation into the notification email HTML.
 - **Owner-only inbox** — `api.messages.list` returns submissions only to the authenticated account whose verified email matches the owner's address (`profile.notifyEmail`).
 - **OTP auth** — the dashboard uses email OTP (6-digit code, 15-minute expiry) via Convex Auth; the relay key comes from `FB_EMAIL_API_KEY`, never from source code.
-- **Secrets** — `.env.local`, `.env`, `.vercel`, and `src/convex/_generated` are gitignored, and no API keys are hardcoded anywhere in the repo.
+- **Secrets** — `.env.local` and `.env` are gitignored, and no API keys are hardcoded anywhere in the repo. (`src/convex/_generated` is intentionally committed so Vercel builds can resolve Convex types — it contains only types/function references, no secrets.)
 
 ## 📬 Owner Inbox
 
