@@ -3,7 +3,9 @@ import { RandomReader, generateRandomString } from "@oslojs/crypto/random";
 import { Resend } from "resend";
 
 const resendApiKey = process.env.RESEND_API_KEY;
-const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@resend.dev";
+// Resend free tier ONLY allows sending from @resend.dev domains.
+// Do NOT set a custom domain here unless you verified it in Resend dashboard.
+const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 const appName = process.env.VLY_APP_NAME || "Afaq Portfolio";
 
 export const emailOtp = Email({
@@ -43,7 +45,9 @@ export const emailOtp = Email({
         `,
       });
     } catch (error) {
-      throw new Error(JSON.stringify(error));
+      const msg = error instanceof Error ? error.message : JSON.stringify(error);
+      console.error("[emailOtp] Failed to send OTP:", msg);
+      throw new Error(`Failed to send OTP email: ${msg}`);
     }
   },
 });
