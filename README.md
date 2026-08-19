@@ -63,7 +63,9 @@ An interactive 3D portfolio with a minimalist monochrome theme, featuring an imm
 | **AI & ML** | Google Gemini, Claude, OpenAI, Groq LLMs |
 | **Automation** | n8n, multi-agent orchestration, AI content pipelines |
 | **DevOps** | Docker, Google Cloud Run, Vercel, Git & GitHub |
-| **Databases** | Convex, PostgreSQL, SQL |
+| **Email** | Resend (transactional OTP emails) |
+| **Auth** | Convex Auth — email OTP + anonymous |
+| **Database** | Convex, PostgreSQL, SQL |
 
 ---
 
@@ -165,6 +167,13 @@ Open [http://localhost:5173](http://localhost:5173) to view the portfolio.
 | `bun run build` | Typecheck + production build |
 | `bunx tsc -b --noEmit` | Typecheck only |
 | `bunx convex dev --once` | Push Convex functions + codegen |
+
+### Environment Variables
+
+| Variable | Required | Purpose |
+|----------|----------|---------|
+| `RESEND_API_KEY` | Yes | OTP email service (owner login) |
+| `RESEND_FROM_EMAIL` | Yes | Sender address for OTP emails |
 
 ---
 

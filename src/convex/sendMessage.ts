@@ -1,7 +1,7 @@
 "use node";
 
 import { v } from "convex/values";
-import { vly } from "../lib/vly-integrations";
+import { Resend } from "resend";
 import { action } from "./_generated/server";
 import { api } from "./_generated/api";
 
@@ -71,13 +71,18 @@ export const sendMessage = action({
 
     let emailNotified = false;
     try {
-      if (process.env.VLY_INTEGRATION_KEY && args.ownerEmail) {
+      const resendApiKey = process.env.RESEND_API_KEY;
+      const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@resend.dev";
+
+      if (resendApiKey && args.ownerEmail) {
+        const resend = new Resend(resendApiKey);
         const sender = `${name}${company ? ` · ${company}` : ""} <${email}>`;
         const safeName = escapeHtml(name);
         const safeCompany = escapeHtml(company ?? "");
         const safeMessage = escapeHtml(message);
         const safeEmail = escapeHtml(email);
-        const result = await vly.email.send({
+        await resend.emails.send({
+          from: fromEmail,
           to: args.ownerEmail,
           replyTo: email,
           subject: `New portfolio inquiry from ${name}`,
@@ -98,7 +103,7 @@ export const sendMessage = action({
             `</div>`,
           ].join("\n"),
         });
-        emailNotified = result.success === true;
+        emailNotified = true;
       }
     } catch (error) {
       console.error("[sendMessage] Email notification failed:", error);
