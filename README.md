@@ -1,132 +1,185 @@
-# Afaq Ul Islam — Full-Stack & AI Engineer Portfolio
+<p align="center">
+  <img src="public/logo.svg" alt="Afaq Ul Islam" width="100" />
+</p>
 
-A minimalist, monochrome 3D portfolio for freelance clients. Built as a full-stack app: the public portfolio (hero, impact metrics, resume, projects, skills, contact) plus a protected owner inbox that receives contact-form submissions by email.
+<h1 align="center">Afaq Ul Islam</h1>
 
-**Live demo:** https://afaqulislam.vercel.app
+<p align="center">
+  <strong>Full-Stack & AI Engineer</strong><br/>
+  Building production-grade SaaS products, AI-powered systems & automation workflows.
+</p>
+
+<p align="center">
+  <a href="https://afaqulislam.freebuff.app/">
+    <img src="https://img.shields.io/badge/Live-Portfolio-0a0a0a?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio" />
+  </a>
+  <a href="https://github.com/afaqulislam">
+    <img src="https://img.shields.io/badge/GitHub-afaqulislam-181717?style=for-the-badge&logo=github" alt="GitHub" />
+  </a>
+  <a href="https://www.linkedin.com/in/afaqulislam">
+    <img src="https://img.shields.io/badge/LinkedIn-afaqulislam-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" />
+  </a>
+  <a href="mailto:afaqulislam707@gmail.com">
+    <img src="https://img.shields.io/badge/Email-afaqulislam707@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-22C55E?style=flat-square" alt="Open to Work" />
+  <img src="https://img.shields.io/badge/Location-Karachi,%20Pakistan-6B7280?style=flat-square" alt="Location" />
+</p>
 
 ---
 
-## ✨ Features
+## 👋 About Me
 
-- **Landing page** (`/`) — hero with an interactive low-poly 3D robot scene, impact metrics, tech marquee, capabilities, "How I work" process, experience, project cards with tech stacks, skills, education, achievements, and a contact section.
-- **Download CV** — generates a clean, print-ready `Afaq_Ul_Islam_CV.pdf` client-side from the same data that drives the site (`src/lib/generateCv.ts`).
-- **Contact form** (`/#contact`) — validated server-side, spam-protected (honeypot), stored in Convex, and forwarded to the owner's email via the built-in Vly email integration.
-- **Owner inbox** (`/dashboard`) — email-OTP sign-in, protected route, and a message list that only the owner's verified email can read.
-- **Fully responsive** — every section is centered and reflows cleanly from mobile to desktop.
-- **Light + dark mode** via the shadcn/ui token system.
+I'm **Afaq Ul Islam** — a full-stack and AI engineer based in **Karachi, Pakistan**. I'm the **Co-Founder & COO at [Neofyx](https://github.com/afaqulislam)**, where I lead product engineering and client delivery for AI automation and SaaS products.
 
-## 🧱 Tech Stack
+I specialize in building end-to-end web applications, AI-powered features, and automation systems that solve real-world problems. With 2+ years of professional and freelance experience, I've shipped 10+ projects ranging from SaaS platforms to multi-agent AI systems.
 
-| Layer        | Tech                                                        |
-| ------------ | ----------------------------------------------------------- |
-| Frontend     | React 19, TypeScript, Vite                                  |
-| Routing      | React Router v7                                             |
-| Styling      | Tailwind CSS v4, shadcn/ui, Framer Motion                   |
-| 3D           | Three.js (interactive robot scene)                          |
-| Backend/DB   | Convex (queries, mutations, actions)                        |
-| Auth         | Convex Auth — email OTP + anonymous                         |
-| Email        | Vly email integration (no external provider needed)         |
-| PDF          | jsPDF (client-side CV generation)                           |
-| Package mgr  | Bun                                                        |
+**What I do:**
+- 🏗️ Full-stack web development with **React**, **Next.js**, **TypeScript**, and **FastAPI**
+- 🤖 AI & automation engineering with **Gemini**, **Claude**, **OpenAI**, and **Groq** APIs
+- 🚀 Product architecture — from concept to deployment on **Google Cloud Run** and modern hosting
+- ⚡ Workflow automation with **n8n**, agentic systems, and multi-agent orchestration
 
-## 📁 Project Structure
+---
 
-```
-src/
-├── components/        # UI components (ContactForm, Scene3D, TiltCard, shadcn/ui)
-├── convex/            # Backend: schema, auth, messages, sendMessage action
-├── data/portfolio.ts  # Single source of truth for ALL portfolio content
-├── lib/               # generateCv.ts (PDF), vly-integrations.ts
-├── pages/             # Landing.tsx, Auth.tsx, Dashboard.tsx, NotFound.tsx
-├── hooks/             # use-auth, use-mobile
-├── index.css          # Theme tokens (monochrome minimal palette)
-└── main.tsx           # Router + app bootstrap
-```
+## 🌐 Live Portfolio
 
-**Content lives in one place:** edit `src/data/portfolio.ts` (profile, experience, projects, skills, achievements, education, socials) and the site, CV, and contact form all update together.
+> **[https://afaqulislam.freebuff.app/](https://afaqulislam.freebuff.app/)**
 
-## 🚀 Getting Started
+An interactive 3D portfolio with a minimalist monochrome theme, featuring an immersive robot scene, downloadable CV, contact form with real-time notifications, and a protected owner inbox.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Frontend** | React 19, TypeScript, Next.js, Tailwind CSS, Framer Motion |
+| **3D** | Three.js (interactive robot scene) |
+| **Backend** | FastAPI, Node.js, Convex (serverless DB + functions) |
+| **AI & ML** | Google Gemini, Claude, OpenAI, Groq LLMs |
+| **Automation** | n8n, multi-agent orchestration, AI content pipelines |
+| **DevOps** | Docker, Google Cloud Run, Vercel, Git & GitHub |
+| **Databases** | Convex, PostgreSQL, SQL |
+
+---
+
+## 📂 Featured Projects
+
+### 🔴 CIRO AI — Multi-Agent Crisis Response System
+> Built for AI Seekho Phase 2. Coordinated multiple AI agents to support crisis response workflows.
+> `Python` `Multi-Agent AI` `Orchestration`
+
+### 🌾 Kisaan Dost AI — Crop Disease Detector
+> AI-powered crop disease detection for Pakistani farmers using Google Gemini Vision. **Silver Tier Winner at Google AI Seekho 2026.**
+> `Google Gemini` `Python` `AI Vision`
+
+### 👗 AURELIA — Luxury Fashion E-Commerce
+> Full-stack luxury fashion platform built for Google Build with AI 2026. Deployed on Google Cloud Run.
+> `Next.js` `TypeScript` `Google Cloud Run`
+
+### 🧠 Personal AI Employee
+> Agentic personal-automation system with persistent memory, tiered Gmail/WhatsApp/LinkedIn automation, and social-posting capabilities.
+> `Python` `Qwen Code CLI` `Obsidian` `Automation`
+
+---
+
+## 🏆 Achievements
+
+| Award | Description |
+|-------|-------------|
+| 🥈 **Silver Tier Winner** | Google AI Seekho 2026 — Kisaan Dost AI |
+| 🏆 **Startup Challenge Winner** | Neofyx won a startup challenge competition |
+| 📊 **Top 7% Ranked** | #21 of 319 participants in "Ramadan Prompting Nights" |
+| 🎓 **Y Combinator Applied** | Applied to Y Combinator Startup School 2026 with Neofyx |
+
+---
+
+## 💼 Experience
+
+### Co-Founder & COO — Neofyx
+**2025 — Present** · Karachi, Pakistan
+
+- Co-leading an AI automation and SaaS startup alongside CEO and CTO functions
+- Driving product engineering as a hands-on full-stack and AI engineer
+- Owning client and project delivery — scoping requirements and translating business needs into technical solutions
+
+### Full-Stack & AI Engineer (Freelance)
+**2024 — Present** · Remote
+
+- Delivered website build-out for C.Ronaldo Sports on a Next.js stack
+- Designed n8n automation workflows for AI-generated video content and multi-platform publishing
+- Built multiple production web applications and AI-powered tools
+
+---
+
+## 🎓 Education
+
+| Institution | Program | Status |
+|------------|---------|--------|
+| **University of Karachi** | BS Computational Mathematics | In Progress |
+| **GIAIC** (Governor's Initiative for AI & Computing) | Agentic AI and Python Track | In Progress |
+
+---
+
+## 📊 Impact at a Glance
+
+| Metric | Value |
+|--------|-------|
+| Years of Experience | 2+ |
+| Projects Shipped | 10+ |
+| AI Models Integrated | 5+ |
+| Competitive Ranking | Top 7% |
+
+---
+
+## 🚀 Getting Started (Portfolio Project)
+
+This is the source code for my personal portfolio. Built with React, Three.js, Convex, and Tailwind CSS.
 
 ```bash
-bun install          # install dependencies
-bunx convex dev      # link/start the Convex backend (regenerates src/convex/_generated)
-bun dev              # start the Vite dev server
+# Clone the repository
+git clone https://github.com/afaqulislam/minimalist-portfolio-freebuff.git
+cd minimalist-portfolio-freebuff
+
+# Install dependencies
+bun install
+
+# Start Convex backend
+bunx convex dev
+
+# Start dev server
+bun dev
 ```
 
-The dev server runs on http://localhost:5173. The Convex dashboard link is printed by `convex dev`.
+Open [http://localhost:5173](http://localhost:5173) to view the portfolio.
 
-### Scripts
+### Available Scripts
 
-| Command              | Purpose                              |
-| -------------------- | ------------------------------------ |
-| `bun dev`            | Start the Vite dev server            |
-| `bun run build`      | Typecheck + production build         |
-| `bunx tsc -b --noEmit` | Typecheck only                     |
-| `bunx convex dev --once` | Push Convex functions + codegen  |
+| Command | Description |
+|---------|-------------|
+| `bun dev` | Start development server |
+| `bun run build` | Typecheck + production build |
+| `bunx tsc -b --noEmit` | Typecheck only |
+| `bunx convex dev --once` | Push Convex functions + codegen |
 
-## 🔐 Environment Variables
+---
 
-No `.env` file is committed — keys are managed through the platform's Keys/API keys UI (or your hosting provider's env settings). Never commit real secrets.
+## 📬 Contact
 
-| Variable                | Where it's used                       | Required |
-| ----------------------- | ------------------------------------- | -------- |
-| `VITE_CONVEX_URL`       | Frontend Convex client (deployment URL) | Yes — set on Vercel for production |
-| `CONVEX_DEPLOYMENT`     | `convex` CLI target for deploy/push   | Yes (set by `convex dev`) |
-| `VLY_INTEGRATION_KEY`   | Contact-form email notifications (`src/convex/sendMessage.ts`) | Optional — messages still store without it |
-| `VLY_APP_NAME`          | App name shown in OTP emails          | Optional |
-| `FB_EMAIL_API_KEY`      | OTP sign-in emails (`src/convex/auth/emailOtp.ts`) | **Yes** — no key is hardcoded; without it OTP emails fail |
-| `JWKS`, `JWT_PRIVATE_KEY`, `SITE_URL` | Convex Auth JWT signing  | Set by the platform |
+| Channel | Link |
+|---------|------|
+| 📧 **Email** | [afaqulislam707@gmail.com](mailto:afaqulislam707@gmail.com) |
+| 💼 **LinkedIn** | [linkedin.com/in/afaqulislam](https://www.linkedin.com/in/afaqulislam) |
+| 🐙 **GitHub** | [github.com/afaqulislam](https://github.com/afaqulislam) |
+| 🐦 **X (Twitter)** | [@afaqulislam708](https://x.com/afaqulislam708) |
+| 🔗 **Linktree** | [linktr.ee/afaqulislam](https://linktr.ee/afaqulislam) |
 
-## 🌍 Deploying to Vercel
+---
 
-The repo is deploy-ready:
-
-1. Push this project to a GitHub repository.
-2. In Vercel: **Add New → Project → Import** the GitHub repo.
-3. Vercel auto-detects Vite (build: `bun run build`, output: `dist`). If prompted, set the **Framework Preset** to *Vite* and the install command to `bun install`.
-4. Add the production environment variables in **Project → Settings → Environment Variables**:
-   - `VITE_CONVEX_URL` → your production Convex deployment URL (e.g. `https://<name>.convex.cloud`)
-   - `VLY_INTEGRATION_KEY` → your Vly email key (for contact-form notifications)
-   - `VLY_APP_NAME` → your app name
-5. Deploy. `vercel.json` includes an SPA fallback rewrite so client-side routes (`/auth`, `/dashboard`) work on direct visits.
-
-> **Important:** `src/convex/_generated/` (Convex's generated TypeScript types) is **committed to the repo** — it is not gitignored. Vercel's build runs `tsc` before bundling, so the generated files must be present. They are regenerated automatically whenever you run `bunx convex dev` or `bunx convex codegen`. After changing `src/convex/schema.ts`, regenerate them and commit the updated files:
->
-> ```bash
-> bunx convex dev --once   # regenerates src/convex/_generated
-> ```
-
-### Deploying the Convex backend
-
-The database/functions run on Convex, not Vercel:
-
-```bash
-bunx convex deploy     # push functions + schema to the production deployment
-```
-
-`CONVEX_DEPLOYMENT` must point at your production deployment (see Convex dashboard → Deployments → Production).
-
-## 🛡️ Security Notes
-
-- **Server-side validation** on every contact submission (`src/convex/sendMessage.ts` **and** `src/convex/messages.ts`) — length, format, and field limits are enforced on the backend, not just the UI. The public mutation re-validates independently, so it can't be bypassed by calling it directly.
-- **Spam honeypot** — a hidden form field (`website`) silently discards bot submissions without tipping them off.
-- **Rate limiting** — max 5 submissions per hour per email address (`messages.by_email_created` index).
-- **HTML-escaped emails** — user input is escaped before interpolation into the notification email HTML.
-- **Owner-only inbox** — `api.messages.list` returns submissions only to the authenticated account whose verified email matches the owner's address (`profile.notifyEmail`).
-- **OTP auth** — the dashboard uses email OTP (6-digit code, 15-minute expiry) via Convex Auth; the relay key comes from `FB_EMAIL_API_KEY`, never from source code.
-- **Secrets** — `.env.local` and `.env` are gitignored, and no API keys are hardcoded anywhere in the repo. (`src/convex/_generated` is intentionally committed so Vercel builds can resolve Convex types — it contains only types/function references, no secrets.)
-
-## 📬 Owner Inbox
-
-1. Go to **Footer → Owner login** (or `/auth`).
-2. Enter your email — a 6-digit OTP is sent to it.
-3. After sign-in you land on `/dashboard`, where every contact-form submission is listed newest-first.
-4. New inquiries are also emailed to `afaqulislam707@gmail.com` automatically.
-
-## 🧑‍💻 Author
-
-**Afaq Ul Islam** — Full-Stack & AI Engineer
-
-- Email: [afaqulislam707@gmail.com](mailto:afaqulislam707@gmail.com)
-- GitHub: [github.com/afaqulislam](https://github.com/afaqulislam)
-- LinkedIn: [linkedin.com/in/afaqulislam](https://www.linkedin.com/in/afaqulislam)
+<p align="center">
+  <i>Built with ❤️ by Afaq Ul Islam</i>
+</p>
