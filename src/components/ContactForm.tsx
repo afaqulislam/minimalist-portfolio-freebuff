@@ -44,11 +44,14 @@ export function ContactForm() {
 
       setStatus("sent");
       form.reset();
-      toast.success("Message sent", {
-        description: result.emailNotified
+      toast.success(
+        result.emailNotified
           ? "Thanks — I'll get back to you within one business day."
           : "Thanks — your message has been received.",
-      });
+        {
+          duration: 6000,
+        },
+      );
     } catch (err) {
       console.error("[ContactForm] Submit failed:", err);
       setStatus("error");

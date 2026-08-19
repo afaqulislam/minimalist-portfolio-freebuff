@@ -72,7 +72,7 @@ export const sendMessage = action({
     let emailNotified = false;
     try {
       const resendApiKey = process.env.RESEND_API_KEY;
-      const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@resend.dev";
+      const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 
       if (resendApiKey && args.ownerEmail) {
         const resend = new Resend(resendApiKey);
