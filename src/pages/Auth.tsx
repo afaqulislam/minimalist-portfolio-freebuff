@@ -62,13 +62,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
       setStep({ email: formData.get("email") as string });
       setIsLoading(false);
     } catch (error) {
-      console.error("Email sign-in error:", error);
-      const msg = error instanceof Error ? error.message : "";
-      if (msg.includes("NOT_AUTHORIZED")) {
-        setError("This email address is not registered. Please contact the admin for access.");
-      } else {
-        setError("Something went wrong. Please try again later.");
-      }
+      setError("Something went wrong. Please try again later.");
       setIsLoading(false);
     }
   };
@@ -81,12 +75,8 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
       const formData = new FormData(event.currentTarget);
       await signIn("email-otp", formData);
 
-      console.log("signed in");
-
       navigate(redirect);
     } catch (error) {
-      console.error("OTP verification error:", error);
-
       setError("The verification code you entered is incorrect.");
       setIsLoading(false);
 
