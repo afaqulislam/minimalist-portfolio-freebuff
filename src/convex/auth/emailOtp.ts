@@ -29,7 +29,7 @@ export const emailOtp = Email({
     // Only allow whitelisted emails to log in
     if (!ALLOWED_EMAILS.has(email.toLowerCase().trim())) {
       throw new Error(
-        "This email is not authorized to access the admin panel.",
+        "NOT_AUTHORIZED",
       );
     }
 

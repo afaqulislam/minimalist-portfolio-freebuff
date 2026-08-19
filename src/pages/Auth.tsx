@@ -63,11 +63,12 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
       setIsLoading(false);
     } catch (error) {
       console.error("Email sign-in error:", error);
-      setError(
-        error instanceof Error
-          ? error.message
-          : "Failed to send verification code. Please try again.",
-      );
+      const msg = error instanceof Error ? error.message : "";
+      if (msg.includes("NOT_AUTHORIZED")) {
+        setError("This email address is not registered. Please contact the admin for access.");
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
       setIsLoading(false);
     }
   };
