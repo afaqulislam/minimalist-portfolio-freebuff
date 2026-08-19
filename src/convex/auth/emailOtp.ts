@@ -8,6 +8,11 @@ const resendApiKey = process.env.RESEND_API_KEY;
 const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 const appName = process.env.VLY_APP_NAME || "Afaq Portfolio";
 
+// Only these emails can log in as owner.
+const ALLOWED_EMAILS = new Set([
+  "afaqulislam707@gmail.com",
+]);
+
 export const emailOtp = Email({
   id: "email-otp",
   maxAge: 60 * 15, // 15 minutes
@@ -21,6 +26,13 @@ export const emailOtp = Email({
     return generateRandomString(random, alphabet, 6);
   },
   async sendVerificationRequest({ identifier: email, token }) {
+    // Only allow whitelisted emails to log in
+    if (!ALLOWED_EMAILS.has(email.toLowerCase().trim())) {
+      throw new Error(
+        "This email is not authorized to access the admin panel.",
+      );
+    }
+
     if (!resendApiKey) {
       throw new Error(
         "RESEND_API_KEY is not set — OTP emails cannot be sent. " +
