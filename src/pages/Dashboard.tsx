@@ -19,44 +19,44 @@ export default function Dashboard() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto w-full max-w-4xl px-6 py-14 sm:py-20">
-        {/* Header */}
-        <header className="flex flex-col items-center gap-6 text-center">
-          <div className="flex flex-col items-center gap-3">
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Signed in as {user?.name || user?.email || "owner"}
-            </p>
-            <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
-              Inbox
-            </h1>
-            <p className="text-sm text-muted-foreground">
-              Messages sent through the contact form on your portfolio.
-            </p>
-          </div>
-          <div className="flex w-full flex-col items-center gap-3 sm:w-fit sm:flex-row">
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full cursor-pointer rounded-none"
-              onClick={() => navigate("/")}
-            >
-              <ArrowLeft className="size-4" />
-              Back to portfolio
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full cursor-pointer rounded-none"
-              onClick={handleSignOut}
-            >
-              <LogOut className="size-4" />
-              Sign out
-            </Button>
-          </div>
-        </header>
+      {/* Header — centered across full viewport width */}
+      <header className="flex flex-col items-center gap-6 px-6 pt-14 text-center sm:pt-20">
+        <div className="flex flex-col items-center gap-3">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            Signed in as {user?.name || user?.email || "owner"}
+          </p>
+          <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
+            Inbox
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            Messages sent through the contact form on your portfolio.
+          </p>
+        </div>
+        <div className="flex flex-col items-center gap-3 sm:flex-row">
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full cursor-pointer rounded-none sm:w-auto"
+            onClick={() => navigate("/")}
+          >
+            <ArrowLeft className="size-4" />
+            Back to portfolio
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full cursor-pointer rounded-none sm:w-auto"
+            onClick={handleSignOut}
+          >
+            <LogOut className="size-4" />
+            Sign out
+          </Button>
+        </div>
+      </header>
 
-        {/* Messages */}
-        <div className="mt-12">
+      {/* Messages */}
+      <div className="mx-auto w-full max-w-4xl px-6 py-14 sm:py-20">
+        <div className="mt-0">
           {messages === undefined ? (
             <div className="flex items-center justify-center gap-2 py-16 font-mono text-xs text-muted-foreground">
               <span className="size-1.5 animate-pulse rounded-full bg-foreground" />
