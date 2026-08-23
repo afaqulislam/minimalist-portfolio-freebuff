@@ -278,7 +278,9 @@ export const VlyToolbar: React.FC = () => {
 
   // Listen for postMessage from parent to enable/disable select mode
   React.useEffect(() => {
+    const ALLOWED_ORIGINS = [window.location.origin];
     function handleMessage(event: MessageEvent) {
+      if (!ALLOWED_ORIGINS.includes(event.origin)) return;
       if (event.data && event.data.type === "vly-toolbar-enable-select") {
         setSelectMode(true);
       }
@@ -315,7 +317,7 @@ export const VlyToolbar: React.FC = () => {
         reactHierarchyFormatted: formatted,
         image: imageDataUrl,
       },
-      "*",
+      window.location.origin,
     );
   }, []);
 
