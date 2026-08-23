@@ -1,6 +1,6 @@
 import { useQuery } from "convex/react";
 import { format } from "date-fns";
-import { Inbox as InboxIcon, LogOut } from "lucide-react";
+import { ArrowLeft, Inbox as InboxIcon, LogOut } from "lucide-react";
 import { useNavigate } from "react-router";
 
 import { api } from "@/convex/_generated/api";
@@ -33,15 +33,26 @@ export default function Dashboard() {
               Messages sent through the contact form on your portfolio.
             </p>
           </div>
-          <Button
-            type="button"
-            variant="outline"
-            className="w-full cursor-pointer rounded-none self-center sm:w-fit"
-            onClick={handleSignOut}
-          >
-            <LogOut className="size-4" />
-            Sign out
-          </Button>
+          <div className="flex w-full flex-col items-center gap-3 sm:w-fit sm:flex-row">
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full cursor-pointer rounded-none"
+              onClick={() => navigate("/")}
+            >
+              <ArrowLeft className="size-4" />
+              Back to portfolio
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full cursor-pointer rounded-none"
+              onClick={handleSignOut}
+            >
+              <LogOut className="size-4" />
+              Sign out
+            </Button>
+          </div>
         </header>
 
         {/* Messages */}
