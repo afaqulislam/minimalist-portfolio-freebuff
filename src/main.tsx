@@ -101,17 +101,28 @@ const convex = new ConvexReactClient(convexUrl);
 
 
 
+/**
+ * Allowed parent origins for postMessage communication.
+ * Only these origins may send navigation commands into the iframe.
+ */
+const ALLOWED_PARENT_ORIGINS = [
+  "https://afaqulislam.freebuff.app",
+  window.location.origin, // same-origin preview environments
+];
+
 function RouteSyncer() {
   const location = useLocation();
   useEffect(() => {
     window.parent.postMessage(
       { type: "iframe-route-change", path: location.pathname },
-      "*",
+      window.location.origin,
     );
   }, [location.pathname]);
 
   useEffect(() => {
     function handleMessage(event: MessageEvent) {
+      // Only accept navigation commands from trusted origins
+      if (!ALLOWED_PARENT_ORIGINS.includes(event.origin)) return;
       if (event.data?.type === "navigate") {
         if (event.data.direction === "back") window.history.back();
         if (event.data.direction === "forward") window.history.forward();
