@@ -16,7 +16,7 @@ import {
 
 import { useAuth } from "@/hooks/use-auth";
 
-import { ArrowRight, Loader2, Mail } from "lucide-react";
+import { ArrowLeft, ArrowRight, Loader2, Mail } from "lucide-react";
 import { Suspense, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 
@@ -91,6 +91,15 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
       {/* Auth Content */}
       <div className="flex-1 flex items-center justify-center px-4 py-8">
         <div className="flex items-center justify-center h-full flex-col w-full">
+        <Button
+          type="button"
+          variant="ghost"
+          className="mb-6 cursor-pointer text-muted-foreground"
+          onClick={() => navigate("/")}
+        >
+          <ArrowLeft className="size-4" />
+          Back to portfolio
+        </Button>
         <Card className="w-full max-w-[400px] pb-0 border shadow-md">
           {step === "signIn" ? (
             <>
