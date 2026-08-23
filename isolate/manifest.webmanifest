@@ -1,7 +1,7 @@
 {
   "name": "Afaq Ul Islam — Full-Stack & AI Developer Portfolio",
   "short_name": "Afaq Portfolio",
-  "description": "Full-Stack & AI Developer. Building SaaS products with Next.js, React, TypeScript & FastAPI.",
+  "description": "Full-Stack & AI Developer. Building SaaS products with React, TypeScript & FastAPI.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -13,16 +13,6 @@
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
     }
   ]
 }
