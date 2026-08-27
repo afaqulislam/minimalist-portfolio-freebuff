@@ -34,14 +34,16 @@ Build a professional personal portfolio website that:
 
 | Category | Technology | Purpose |
 |----------|-----------|---------|
-| **Frontend** | React 19, TypeScript | Component-based UI with type safety |
-| **Styling** | Tailwind CSS v4 | Utility-first responsive styling |
-| **Build** | Vite 7 | Fast development server and optimized production builds |
-| **Backend** | Convex | Serverless database, functions, authentication, and real-time sync |
-| **Auth** | Convex Auth (Email OTP) | Secure owner-only authentication via email verification codes |
-| **Email** | Resend | OTP verification emails and contact form notifications |
+| **Frontend** | React 19, Next.js (14, 16), TypeScript | Component-based UI with type safety |
+| **Styling** | Tailwind CSS v4, Framer Motion | Utility-first styling and animations |
+| **Build** | Vite 7 | Fast dev server and optimized production builds |
+| **Backend** | FastAPI, Node.js, REST API, JWT, OAuth 2.0 | Server-side logic and API design |
+| **AI & Agentic** | OpenAI Agents SDK, Chainlit, Groq AI, Gemini, Claude, n8n | Multi-agent systems and AI integrations |
+| **Cloud & DevOps** | Google Cloud Run, Docker, CI/CD, Vercel, Hugging Face | Deployment and containerization |
+| **CMS & Auth** | Sanity CMS, Clerk | Content management and auth |
+| **Convex** | Serverless DB + functions + auth + realtime | This portfolio's backend |
+| **Email** | Resend | OTP + contact form notifications |
 | **3D Graphics** | Canvas API (dependency-free) | Interactive low-poly robot head scene |
-| **Animations** | Framer Motion | Scroll-triggered animations and page transitions |
 | **UI Components** | shadcn/ui + Radix UI | Accessible, composable UI primitives |
 | **PDF Generation** | jsPDF | Client-side CV PDF generation |
 | **Hosting** | Freebuff | Managed hosting with auto-deploy from GitHub |
@@ -51,17 +53,17 @@ Build a professional personal portfolio website that:
 ## 4. Key Features
 
 ### 4.1 Landing Page
-- **Hero section** with name, role, availability status, and call-to-action buttons
+- **Hero section** with name, role, tagline, availability status, and call-to-action buttons
 - **Interactive 3D robot scene** rendered on canvas with pointer-tracking parallax, depth-sorted wireframe edges, glowing visor eyes, and antenna
-- **Tech marquee** — infinite horizontal scroll of technologies
-- **Impact metrics** — key statistics (years of experience, projects shipped, AI models, competitive ranking)
-- **Capabilities section** — what clients can hire me for
+- **Tech marquee** — infinite horizontal scroll of technologies (React, Next.js, TypeScript, Python, FastAPI, OpenAI Agents SDK, Chainlit, n8n, Docker, Google Cloud Run, etc.)
+- **Impact metrics** — key statistics (2+ years, 10+ projects, 70+ repos, top 10% GIAIC)
+- **Capabilities section** — Full-Stack Web Development, AI & Agentic Development, Product & Technical Leadership, Cloud & Deployment
 - **Process section** — how I work (Discover, Architect, Build & iterate, Deploy & support)
-- **Work experience** — detailed job history with bullet points
-- **Selected projects** — featured work with tech stack tags
-- **Skills grid** — categorized skill groups
-- **Education** — current academic programs
-- **Achievements** — awards and recognitions
+- **Work experience** — 3 roles: Neofyx COO, CodeAlpha Frontend Intern, Freelance Developer
+- **Selected projects** — 10 featured projects with tech stack tags
+- **Skills grid** — 4 categorized groups (Languages, Frontend, Backend & AI, Cloud & Tools)
+- **Education** — 4 entries (University of Karachi, GIAIC, Aisha Bawany College, Sadiq School)
+- **Achievements** — Silver Tier Winner, Startup Challenge Winner
 - **Contact section** — email, phone, location, availability, and functional contact form
 
 ### 4.2 Contact Form

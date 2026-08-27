@@ -54,9 +54,12 @@ This project is submitted as **Task 1: Personal Portfolio Website** for the
 
 ## 👋 About Me
 
-I'm **Afaq Ul Islam** — a full-stack and AI engineer based in **Karachi, Pakistan**. I'm the **Co-Founder & COO at [Neofyx](https://github.com/afaqulislam)**, where I lead product engineering and client delivery for AI automation and SaaS products.
+I'm **Afaq Ul Islam** — a full-stack and AI engineer based in **Karachi, Pakistan**. I'm the **Co-Founder & COO at [Neofyx](https://github.com/afaqulislam)**, where I lead operations, technical execution, and product delivery.
 
-I specialize in building end-to-end web applications, AI-powered features, and automation systems that solve real-world problems. With 2+ years of professional and freelance experience, I've shipped 10+ projects ranging from SaaS platforms to multi-agent AI systems.
+I specialize in building end-to-end web applications, AI-powered features, and automation systems that solve real-world problems. With 2+ years of professional and freelance experience, I've shipped 10+ projects ranging from SaaS platforms to multi-agent AI systems. I'm an active open-source contributor with **70+ public repositories** on GitHub.
+
+- 🎓 First-year **BS Computational Mathematics** student at the University of Karachi
+- 🏫 Enrolled in **GIAIC's** Full-Stack Development & AI / AI Agent Systems / Cloud & Web Development program (**top 10% performer, Batch 1, 90-95th percentile** across three quarters)
 
 ---
 
@@ -130,14 +133,15 @@ An interactive portfolio with a minimalist monochrome theme, featuring a 3D robo
 
 | Category | Technologies |
 |----------|-------------|
-| **Frontend** | React 19, TypeScript, Tailwind CSS v4, Framer Motion |
+| **Frontend** | React 19, Next.js (14, 16), TypeScript, Tailwind CSS v4, Framer Motion, shadcn/ui, Lucide icons |
+| **Backend** | FastAPI, Node.js, REST API design, JWT authentication, OAuth 2.0 |
+| **AI & Agentic** | OpenAI Agents SDK, Chainlit, Groq AI, Google Gemini, Claude, n8n workflow automation |
+| **Cloud & DevOps** | Google Cloud Run, Docker, CI/CD, Vercel, Hugging Face |
+| **CMS & Auth** | Sanity CMS, Clerk |
 | **3D** | Canvas API (dependency-free wireframe renderer) |
-| **Backend** | Convex (serverless DB + functions + auth + realtime) |
+| **Convex** | Serverless DB + functions + auth + realtime (this portfolio) |
 | **Email** | Resend (OTP + contact notifications) |
-| **Auth** | Convex Auth — Email OTP (owner whitelist) |
-| **UI** | shadcn/ui + Radix UI primitives |
 | **Build** | Vite 7 + esbuild (manual chunk splitting) |
-| **Hosting** | Freebuff (managed hosting with auto-deploy) |
 | **PDF** | jsPDF (client-side CV generation) |
 
 ---

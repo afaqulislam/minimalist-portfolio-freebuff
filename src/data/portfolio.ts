@@ -1,39 +1,37 @@
 // ---------------------------------------------------------------------------
 // PORTFOLIO CONTENT
 // ---------------------------------------------------------------------------
-// This is the single source of truth for everything shown on the public
-// portfolio: identity, resume, and contact details.
+// Single source of truth for all portfolio content: identity, resume,
+// projects, skills, and contact details.
 //
-// Populated from Afaq's CV (Aug 2026). Please review:
-//  - email / notifyEmail: replace with a real inbox you check daily
-//  - experience periods: adjust to match your LinkedIn work history
+// Populated from Afaq's CV (Aug 2026).
 // ---------------------------------------------------------------------------
 
 export const profile = {
   name: "Afaq Ul Islam",
   initials: "AUI",
   role: "Full-Stack & AI Engineer",
-  tagline: "Software Engineering Consultant · Fractional Engineering",
+  tagline: "Co-Founder & COO, Neofyx",
   summary:
-    "Full-stack and AI engineer with hands-on experience building production-grade web applications, AI-powered automation systems, and SaaS products end to end. Co-Founder and COO at Neofyx, where I lead product engineering alongside client delivery — comfortable scoping requirements, architecting solutions, and shipping working software independently across modern web and AI stacks.",
+    "Full-stack and AI engineer with hands-on, end-to-end experience building web applications, AI-powered automation systems, and SaaS products. Co-Founder and COO at Neofyx, an AI automation and SaaS startup in Karachi, where I lead product engineering and client delivery. First-year BS Computational Mathematics student at the University of Karachi, also enrolled in GIAIC's Full-Stack Development & AI / AI Agent Systems / Cloud & Web Development program (top 10% performer, Batch 1, 90-95th percentile across three quarters). Active open-source contributor with 70+ public repositories on GitHub. Comfortable scoping requirements, architecting solutions, and shipping working software independently across modern web and AI stacks.",
   location: "Karachi, Pakistan",
   availability: "Open to consulting, project-based & fractional work",
   email: "afaqulislam707@gmail.com",
   phone: "0346-1863082",
-  // Recipient for contact-form notifications (via the built-in email integration).
   notifyEmail: "afaqulislam707@gmail.com",
-  // Path to your CV PDF, hosted in /public. Drop your file at public/cv.pdf
-  // (or update this path to match your file's name).
   cvUrl: "/cv.pdf",
-  stack: ["Next.js", "React", "TypeScript", "FastAPI", "Python", "AI APIs"],
+  stack: ["React", "Next.js", "TypeScript", "Python", "FastAPI", "AI APIs"],
   socials: [
-    { label: "GitHub", href: "https://github.com/afaqulislam" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/afaqulislam" },
-    { label: "Website", href: "https://afaqulislam.vercel.app" },
-    { label: "X", href: "https://x.com/afaqulislam708" },
-    { label: "Linktree", href: "https://linktr.ee/afaqulislam" },
+    { label: "GitHub", href: "https://github.com/afaqulislam" },
+    { label: "X (Twitter)", href: "https://x.com/afaqulislam708" },
+    { label: "Portfolio", href: "https://afaqulislam.vercel.app" },
   ],
 } as const;
+
+// ---------------------------------------------------------------------------
+// Experience
+// ---------------------------------------------------------------------------
 
 export type ExperienceItem = {
   company: string;
@@ -47,32 +45,46 @@ export const experience: ExperienceItem[] = [
   {
     company: "Neofyx",
     role: "Co-Founder & COO",
-    period: "2025 — Present",
+    period: "Dec 2025 — Present",
     summary:
-      "AI automation and SaaS startup in Karachi — co-leading the company and driving product engineering alongside client delivery.",
+      "AI automation and SaaS startup in Karachi — leading operations, technical execution, and product delivery.",
     points: [
-      "Co-lead a Karachi-based AI automation and SaaS startup, working alongside co-founders across CEO and CTO functions.",
-      "Drive product engineering as a hands-on full-stack and AI engineer, building client-facing web applications and AI-powered features.",
-      "Own client and project delivery, including scoping requirements and translating business needs into technical solutions.",
+      "Lead operations, technical execution, and product delivery; structure workflows and define technical direction so projects move efficiently from concept to deployment.",
+      "Build full-stack features and AI-powered functionality end to end for client-facing applications.",
+      "Drive product engineering as a hands-on full-stack and AI engineer alongside co-founders across CEO and CTO functions.",
+    ],
+  },
+  {
+    company: "CodeAlpha (Remote)",
+    role: "Frontend Development Intern",
+    period: "Sep 2024 (1 month)",
+    summary:
+      "Virtual internship focused on frontend development fundamentals.",
+    points: [
+      "Completed a one-month Frontend Development Virtual Internship (1–30 September 2024).",
+      "Independently built and deployed three responsive web projects using HTML, CSS, and JavaScript: an Audio Player, a Calculator, and an Image Gallery.",
+      "Applied core frontend concepts including DOM manipulation, responsive UI design, and interactive component building.",
     ],
   },
   {
     company: "Independent",
-    role: "Full-Stack & AI Engineer (Freelance / Project-Based)",
-    period: "2024 — Present",
+    role: "Full-Stack Developer (Freelance / Project-Based)",
+    period: "Ongoing",
     summary:
       "Freelance and project-based engagements spanning web builds, AI automation, and agentic systems.",
     points: [
-      "Delivered a website build-out for C.Ronaldo Sports, a Karachi-based sports and football gear retailer, on a Next.js stack.",
-      "Designed and implemented an n8n automation workflow for AI-generated video content and multi-platform publishing (YouTube, TikTok), integrating Groq LLMs and the kie.ai Veo3 API on a free-tier stack.",
-      "Built a personal portfolio website using React, TypeScript, Tailwind CSS, and Framer Motion.",
+      "Built and deployed a personal portfolio website using React, TypeScript, Tailwind CSS, and Framer Motion.",
+      "Designed and implemented an n8n automation workflow for AI-generated video content and multi-platform publishing (YouTube, TikTok), integrating Groq LLMs and the kie.ai Veo3 API.",
     ],
   },
 ];
 
+// ---------------------------------------------------------------------------
+// Impact metrics
+// ---------------------------------------------------------------------------
+
 export type Metric = { value: string; label: string };
 
-// Impact metrics — quick signals of experience for clients scanning the page.
 export const metrics: Metric[] = [
   {
     value: "2+",
@@ -80,21 +92,24 @@ export const metrics: Metric[] = [
   },
   {
     value: "10+",
-    label: "Projects, products & automation systems shipped",
+    label: "Projects shipped across web, AI, and automation",
   },
   {
-    value: "5+",
-    label: "AI models integrated into production builds",
+    value: "70+",
+    label: "Public repositories on GitHub",
   },
   {
-    value: "Top 7%",
-    label: "Ranked in competitive engineering challenges",
+    value: "Top 10%",
+    label: "GIAIC Batch 1 — 90-95th percentile across three quarters",
   },
 ];
 
+// ---------------------------------------------------------------------------
+// Process
+// ---------------------------------------------------------------------------
+
 export type ProcessStep = { step: string; title: string; description: string };
 
-// How a senior engineer works — the delivery process clients can expect.
 export const process: ProcessStep[] = [
   {
     step: "01",
@@ -122,22 +137,25 @@ export const process: ProcessStep[] = [
   },
 ];
 
+// ---------------------------------------------------------------------------
+// Capabilities
+// ---------------------------------------------------------------------------
+
 export type Capability = {
   title: string;
   description: string;
 };
 
-// Core expertise — what clients can hire you for, shown at the top of the resume.
 export const capabilities: Capability[] = [
   {
     title: "Full-Stack Web Development",
     description:
-      "React, TypeScript, Next.js, FastAPI, Python — building, deploying, and maintaining production web applications and SaaS platforms.",
+      "React, Next.js (14, 16, App Router, ISR, Turbopack), TypeScript, FastAPI, Python — building, deploying, and maintaining production web applications and SaaS platforms.",
   },
   {
-    title: "AI & Automation Engineering",
+    title: "AI & Agentic Development",
     description:
-      "Integrating and orchestrating AI APIs (Gemini, Claude, OpenAI, Groq) into applications; building agentic and multi-agent systems, automation workflows (n8n), and AI-powered content and data pipelines.",
+      "OpenAI Agents SDK, Chainlit, Groq AI, Google Gemini, Claude — building multi-agent/agentic systems, n8n workflow automation, and AI-powered content and data pipelines.",
   },
   {
     title: "Product & Technical Leadership",
@@ -147,9 +165,13 @@ export const capabilities: Capability[] = [
   {
     title: "Cloud & Deployment",
     description:
-      "Deploying applications on Google Cloud Run and modern hosting platforms; working with free-tier and cost-conscious infrastructure stacks for early-stage products.",
+      "Google Cloud Run, Docker, CI/CD, Vercel, Hugging Face — containerization, deployment pipelines, and cost-conscious infrastructure for early-stage products.",
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Projects
+// ---------------------------------------------------------------------------
 
 export type Project = {
   name: string;
@@ -157,22 +179,27 @@ export type Project = {
   stack: string[];
 };
 
-// Selected projects — the highlights from the CV.
 export const projects: Project[] = [
-  {
-    name: "CIRO AI — Multi-Agent Crisis Response System",
-    description:
-      "Built as part of a team for AI Seekho Phase 2, coordinating multiple AI agents to support crisis response workflows.",
-    stack: ["Python", "Multi-Agent AI", "Orchestration"],
-  },
   {
     name: "Kisaan Dost AI — Crop Disease Detector",
     description:
-      "AI-powered crop disease detection tool for Pakistani farmers, built on Google Gemini Vision for Google AI Seekho 2026.",
-    stack: ["Google Gemini", "Python", "AI Vision"],
+      "AI-powered crop disease detection tool for Pakistani farmers, built with Google Gemini Vision and deployed on Google Cloud Run, for Google AI Seekho 2026. Won Silver Tier.",
+    stack: ["Google Gemini", "Python", "Google Cloud Run", "AI Vision"],
   },
   {
-    name: "AURELIA — Luxury Fashion E-Commerce Platform",
+    name: "CIRO AI — Multi-Agent Crisis Response System",
+    description:
+      "Built with a team (Aadil Memon, Muskaan Fayyaz) for AI Seekho Phase 2, coordinating multiple AI agents to support crisis response workflows.",
+    stack: ["Python", "Multi-Agent AI", "Orchestration"],
+  },
+  {
+    name: "TaskSnap AI — Screenshot-to-Task Extractor",
+    description:
+      "AI tool that turns a screenshot of any conversation into a prioritized, deadline-aware task list. Built for \"Chai aur Code\", a monthly vibe-coding session by GDG Live Pakistan.",
+    stack: ["Next.js 16", "React 19", "TypeScript", "Groq AI", "Tailwind CSS v4"],
+  },
+  {
+    name: "AURELIA — Luxury Fashion E-Commerce",
     description:
       "Built for the Google Build with AI 2026 workshop (GeeksforGeeks); deployed on Google Cloud Run.",
     stack: ["Next.js", "TypeScript", "Google Cloud Run"],
@@ -180,46 +207,69 @@ export const projects: Project[] = [
   {
     name: "Personal AI Employee",
     description:
-      "An agentic personal-automation system built for GIAIC Hackathon 0, using Obsidian for persistent memory, Python watcher scripts, and a Qwen Code CLI reasoning engine, with tiered Gmail, WhatsApp, LinkedIn, and social-posting automation.",
-    stack: ["Python", "Qwen Code CLI", "Obsidian", "Automation"],
+      "Agentic personal-automation system built for GIAIC Hackathon 0, using Obsidian for persistent memory, Python watcher scripts, and a CLI reasoning engine with tiered Gmail, WhatsApp, LinkedIn, and social-posting automation.",
+    stack: ["Python", "Obsidian", "n8n", "Automation"],
+  },
+  {
+    name: "Taskory — AI Full-Stack Task Manager",
+    description:
+      "Task manager with natural language processing, JWT authentication, real-time task management, and multi-AI-provider support.",
+    stack: ["Python", "FastAPI", "JWT", "REST API"],
+  },
+  {
+    name: "MORENT — Car Rental Marketplace",
+    description:
+      "Booking platform with smart filters, booking calendar, and interactive charts, built for GIAIC Hackathon 2025.",
+    stack: ["Next.js", "Sanity CMS", "Clerk", "shadcn/ui"],
+  },
+  {
+    name: "AUI Blogo — Dev Blog Platform",
+    description:
+      "Production blog with Next.js 14 ISR, Sanity CMS, Tailwind CSS, dark mode, auto table-of-contents, and dynamic SEO, deployed on Vercel.",
+    stack: ["Next.js 14", "Sanity CMS", "Tailwind CSS", "Vercel"],
+  },
+  {
+    name: "ChatAUI — Conversational AI Assistant",
+    description:
+      "Enterprise-style assistant built with Chainlit, the OpenAI Agents SDK, and OAuth 2.0 on a Python backend.",
+    stack: ["Python", "Chainlit", "OpenAI Agents SDK", "OAuth 2.0"],
+  },
+  {
+    name: "25 Python Projects",
+    description:
+      "A portfolio of 25 production-ready Python projects (socket games, computer vision, AI assistants, REST APIs, full-stack integrations) built for GIAIC.",
+    stack: ["Python", "Computer Vision", "REST APIs", "Socket Programming"],
   },
 ];
 
-export type Achievement = {
-  title: string;
-  description: string;
-};
-
-// Achievements — recognitions and milestones from the CV.
-export const achievements: Achievement[] = [
-  {
-    title: "Silver Tier Winner, Google AI Seekho 2026",
-    description:
-      "For Kisaan Dost AI, an AI-powered crop disease detector for Pakistani farmers built on Google Gemini Vision.",
-  },
-  {
-    title: "Startup Challenge Winner",
-    description: "Neofyx won a startup challenge competition.",
-  },
-  {
-    title: "Ranked #21 of 319 participants (top ~7%)",
-    description:
-      "In 'Ramadan Prompting Nights,' a scenario-based daily coding challenge series.",
-  },
-  {
-    title: "Applied to Y Combinator Startup School 2026",
-    description: "With Neofyx and its key product work.",
-  },
-];
+// ---------------------------------------------------------------------------
+// Skills
+// ---------------------------------------------------------------------------
 
 export type SkillGroup = { label: string; items: string[] };
 
 export const skills: SkillGroup[] = [
-  { label: "Languages", items: ["TypeScript", "JavaScript", "Python", "SQL"] },
-  { label: "Frontend", items: ["Next.js", "React", "Tailwind CSS", "Framer Motion"] },
-  { label: "Backend & AI", items: ["FastAPI", "Pydantic", "Node.js", "Gemini", "Claude", "OpenAI", "Groq"] },
-  { label: "Automation & DevOps", items: ["n8n", "Docker", "Google Cloud Run", "Vercel", "Git & GitHub"] },
+  {
+    label: "Languages",
+    items: ["TypeScript", "JavaScript", "Python", "HTML5", "CSS3"],
+  },
+  {
+    label: "Frontend",
+    items: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "shadcn/ui", "Lucide"],
+  },
+  {
+    label: "Backend & AI",
+    items: ["FastAPI", "Node.js", "OpenAI Agents SDK", "Chainlit", "Groq AI", "Google Gemini", "Claude", "n8n"],
+  },
+  {
+    label: "Cloud & Tools",
+    items: ["Google Cloud Run", "Docker", "CI/CD", "Vercel", "Hugging Face", "Git & GitHub", "Sanity CMS", "Clerk"],
+  },
 ];
+
+// ---------------------------------------------------------------------------
+// Education
+// ---------------------------------------------------------------------------
 
 export type EducationItem = {
   school: string;
@@ -234,8 +284,39 @@ export const education: EducationItem[] = [
     period: "In Progress",
   },
   {
-    school: "GIAIC — Governor's Initiative for AI & Computing",
-    degree: "Agentic AI and Python Track",
-    period: "In Progress",
+    school: "GIAIC — Governor's Initiative for GenAI, Web3 & Metaverse",
+    degree: "Full-Stack Development & AI / AI Agent Systems / Cloud & Web Development",
+    period: "Feb 2024 — Sep 2026",
+  },
+  {
+    school: "Aisha Bawany Government College",
+    degree: "Intermediate, Pre-Engineering",
+    period: "Aug 2022 — Aug 2024 · Grade A",
+  },
+  {
+    school: "Sadiq Public Primary & Secondary School",
+    degree: "SSC, Science",
+    period: "May 2020 — May 2022 · Grade A1",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Achievements
+// ---------------------------------------------------------------------------
+
+export type Achievement = {
+  title: string;
+  description: string;
+};
+
+export const achievements: Achievement[] = [
+  {
+    title: "Silver Tier Winner, Google AI Seekho 2026",
+    description:
+      "For Kisaan Dost AI, an AI-powered crop disease detector for Pakistani farmers built on Google Gemini Vision.",
+  },
+  {
+    title: "Startup Challenge Winner",
+    description: "Neofyx won a startup challenge competition.",
   },
 ];

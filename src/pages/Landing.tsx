@@ -104,11 +104,13 @@ function AvailabilityDot() {
 
 const MARQUEE_ITEMS = [
   ...profile.stack,
+  "OpenAI Agents SDK",
+  "Chainlit",
+  "n8n",
+  "Docker",
+  "Google Cloud Run",
+  "Sanity CMS",
   "SaaS",
-  "AI Agents",
-  "REST APIs",
-  "Pydantic",
-  "Vercel",
 ];
 
 export default function Landing() {
