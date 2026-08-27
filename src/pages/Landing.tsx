@@ -123,6 +123,14 @@ export default function Landing() {
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
+      {/* Skip to content link for keyboard users */}
+      <a
+        href="#resume"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-foreground focus:px-4 focus:py-2 focus:text-background focus:outline-none"
+      >
+        Skip to content
+      </a>
+
       {/* Scroll progress bar */}
       <motion.div
         style={{ scaleX: progress }}
@@ -137,6 +145,7 @@ export default function Landing() {
           <a
             href="#top"
             className="flex w-fit items-baseline justify-center gap-2.5 font-display text-sm font-semibold tracking-tight"
+            aria-label="Afaq Ul Islam — back to top"
           >
             {profile.initials}
             <span className="text-muted-foreground">/</span>
@@ -144,7 +153,7 @@ export default function Landing() {
               {profile.name}
             </span>
           </a>
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+          <nav aria-label="Main navigation" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
             <a
               href="#resume"
               className="text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
@@ -635,7 +644,7 @@ export default function Landing() {
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               Elsewhere
             </p>
-            <div className="flex flex-col items-center gap-2">
+            <nav aria-label="Social links" className="flex flex-col items-center gap-2">
               {profile.socials.map((social) => (
                 <a
                   key={social.label}
@@ -647,14 +656,14 @@ export default function Landing() {
                   {social.label}
                 </a>
               ))}
-            </div>
+            </nav>
           </div>
 
           <div className="flex flex-col items-center gap-3">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               Site
             </p>
-            <div className="flex flex-col items-center gap-2 text-sm">
+            <nav aria-label="Site links" className="flex flex-col items-center gap-2 text-sm">
               <a
                 href="#top"
                 className="text-muted-foreground transition-colors hover:text-foreground"
@@ -670,7 +679,7 @@ export default function Landing() {
               >
                 {isAuthenticated ? "Inbox" : "Owner login"}
               </Link>
-            </div>
+            </nav>
           </div>
         </div>
       </footer>

@@ -2,19 +2,19 @@
   <img src="public/logo.svg" alt="Afaq Ul Islam" width="100" />
 </p>
 
-<h1 align="center">Afaq Ul Islam</h1>
+<h1 align="center">Afaq Ul Islam — Portfolio</h1>
 
 <p align="center">
   <strong>Full-Stack & AI Engineer</strong><br/>
-  Building production-grade SaaS products, AI-powered systems & automation workflows.
+  Aptura Tech Solutions · Batch 03 · Week 1 · Task 1
 </p>
 
 <p align="center">
   <a href="https://afaqulislam.freebuff.app/">
     <img src="https://img.shields.io/badge/Live-Portfolio-0a0a0a?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio" />
   </a>
-  <a href="https://github.com/afaqulislam">
-    <img src="https://img.shields.io/badge/GitHub-afaqulislam-181717?style=for-the-badge&logo=github" alt="GitHub" />
+  <a href="https://github.com/afaqulislam/minimalist-portfolio-freebuff">
+    <img src="https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github" alt="GitHub" />
   </a>
   <a href="https://www.linkedin.com/in/afaqulislam">
     <img src="https://img.shields.io/badge/LinkedIn-afaqulislam-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" />
@@ -31,17 +31,32 @@
 
 ---
 
+## 📋 Internship Context
+
+This project is submitted as **Task 1: Personal Portfolio Website** for the
+**Aptura Tech Solutions Batch 03 Internship, Week 1**.
+
+| Detail | Value |
+|--------|-------|
+| **Student** | Afaq Ul Islam |
+| **Program** | Aptura Tech Solutions — Batch 03 |
+| **Task** | Week 1 — Task 1: Personal Portfolio Website |
+| **Live Demo** | [https://afaqulislam.freebuff.app/](https://afaqulislam.freebuff.app/) |
+| **Repository** | [github.com/afaqulislam/minimalist-portfolio-freebuff](https://github.com/afaqulislam/minimalist-portfolio-freebuff) |
+
+**Deliverables included:**
+- [x] Source files (this repository)
+- [x] Report ([REPORT.md](REPORT.md))
+- [x] Screenshots ([SCREENSHOTS.md](SCREENSHOTS.md))
+- [x] README (this file)
+
+---
+
 ## 👋 About Me
 
 I'm **Afaq Ul Islam** — a full-stack and AI engineer based in **Karachi, Pakistan**. I'm the **Co-Founder & COO at [Neofyx](https://github.com/afaqulislam)**, where I lead product engineering and client delivery for AI automation and SaaS products.
 
 I specialize in building end-to-end web applications, AI-powered features, and automation systems that solve real-world problems. With 2+ years of professional and freelance experience, I've shipped 10+ projects ranging from SaaS platforms to multi-agent AI systems.
-
-**What I do:**
-- 🏗️ Full-stack web development with **React**, **Next.js**, **TypeScript**, and **FastAPI**
-- 🤖 AI & automation engineering with **Gemini**, **Claude**, **OpenAI**, and **Groq** APIs
-- 🚀 Product architecture — from concept to deployment on **Google Cloud Run** and modern hosting
-- ⚡ Workflow automation with **n8n**, agentic systems, and multi-agent orchestration
 
 ---
 
@@ -49,41 +64,37 @@ I specialize in building end-to-end web applications, AI-powered features, and a
 
 > **[https://afaqulislam.freebuff.app/](https://afaqulislam.freebuff.app/)**
 
-An interactive 3D portfolio with a minimalist monochrome theme, featuring an immersive robot scene, downloadable CV, contact form with real-time notifications, and a protected owner inbox.
+An interactive portfolio with a minimalist monochrome theme, featuring a 3D robot scene, downloadable CV, contact form with real-time notifications, and a protected owner inbox.
 
 ---
 
-## 🖥️ Portfolio — Project Deep Dive
-
-This repository is the **source code for my personal developer portfolio** — a full-stack web application designed to showcase my work, resume, and skills to freelance clients and recruiters. It is **not** a static template — it is a production application with authentication, a backend database, email notifications, and an interactive 3D scene.
-
-### ✨ Features
+## ✨ Features
 
 | Feature | Description |
 |---------|-------------|
-| **3D Interactive Scene** | A low-poly robot rendered in real-time using Three.js / React Three Fiber, symbolizing frontend engineering. Users can orbit and interact with the model. |
-| **Minimalist Monochrome Design** | Clean, spacious layout with a near-monochrome palette, precise alignment, and intentional whitespace — following a strict Minimalism theme. |
-| **Responsive Layout** | Fully responsive across mobile, tablet, and desktop. Every section is centered and properly aligned on all screen sizes. |
-| **Downloadable CV (PDF)** | One-click CV download generated client-side using jsPDF — no server required. The CV mirrors the portfolio data and is always up to date. |
-| **Contact Form** | A functional contact form with honeypot spam protection. Messages are stored in Convex DB and the owner receives an email notification via Resend. |
-| **Owner Login (Email OTP)** | A secure, email-only authentication system. Only the whitelisted owner email (`afaqulislam707@gmail.com`) can log in — no passwords, no guest access. |
-| **Owner Inbox Dashboard** | After logging in, the owner sees a dashboard with all contact form submissions in real time, powered by Convex's reactive database. |
-| **Animated Marquee** | A scrolling tech-stack marquee strip with smooth CSS animations, showcasing the technologies I work with. |
-| **Stats Section** | Key impact metrics (years of experience, projects shipped, AI models integrated, competitive ranking) displayed in a clean grid. |
-| **Social Proof** | Awards, achievements, and competitive rankings are prominently displayed to build credibility with potential clients. |
-| **PDF-Style Resume Section** | A structured resume section showing experience, projects, skills, education, and achievements — styled to look like a professional CV. |
-| **Framer Motion Animations** | Smooth scroll-triggered animations, page transitions, and micro-interactions throughout the portfolio using Framer Motion. |
-| **SEO Optimized** | Open Graph tags, Twitter cards, meta descriptions, canonical URLs, and semantic HTML for better search engine visibility. |
-| **PWA Ready** | Web manifest with proper icons, theme color, and app metadata for a native-like experience on mobile devices. |
-| **Fast Builds** | Optimized Vite build with manual chunk splitting (React, Radix UI, Framer Motion, Recharts) for fast loading and caching. |
+| **3D Interactive Scene** | Low-poly robot head rendered in real-time on Canvas, with pointer-tracking parallax, depth-sorted wireframe, glowing visor eyes, and antenna |
+| **Minimalist Design** | Clean, spacious layout with near-monochrome palette, precise alignment, and intentional whitespace |
+| **Fully Responsive** | Tested at 320px, 375px, 768px, 1024px, and 1440px — every section is centered and readable |
+| **Downloadable CV (PDF)** | One-click CV generation using jsPDF, always reflects latest portfolio data |
+| **Contact Form** | Functional form with honeypot spam protection, rate limiting (5/hour), and email notifications via Resend |
+| **Owner Login (Email OTP)** | Secure email-only auth — only whitelisted owner email can log in |
+| **Owner Inbox Dashboard** | Real-time display of all contact submissions, powered by Convex |
+| **Tech Marquee** | Infinite horizontal scroll of technologies |
+| **Impact Metrics** | Key statistics (experience, projects, AI models, ranking) |
+| **Animated Sections** | Scroll-triggered Framer Motion animations |
+| **SEO Optimized** | Open Graph, Twitter cards, meta tags, robots.txt, sitemap |
+| **PWA Ready** | Web manifest with proper icons and theme color |
+| **Print Styles** | Clean print stylesheet for CV export |
 
-### 🏗️ Architecture
+---
+
+## 🏗️ Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    CLIENT (React + Vite)                 │
 │                                                         │
-│  Landing Page ──── 3D Scene (Three.js)                  │
+│  Landing Page ──── 3D Scene (Canvas)                    │
 │       │            Resume Section                        │
 │       │            Contact Form                          │
 │       │            Marquee / Stats                       │
@@ -99,78 +110,19 @@ This repository is the **source code for my personal developer portfolio** — a
 │                CONVEX (Backend + Database)               │
 │                                                         │
 │  Schema: messages, users                                │
-│  Queries: messages.list, messages.get                    │
-│  Mutations: messages.insert                              │
-│  Actions: sendMessage (email notification via Resend)    │
-│  Auth: Email OTP provider + Anonymous (disabled)         │
-│  HTTP: Custom routes for auth callbacks                  │
+│  Queries: messages.list                                 │
+│  Mutations: messages.insert                             │
+│  Actions: sendMessage (email notification via Resend)   │
+│  Auth: Email OTP provider (owner whitelist)             │
 └──────────────────────┬──────────────────────────────────┘
                        │ Resend API
 ┌──────────────────────▼──────────────────────────────────┐
 │                   RESEND (Email)                         │
 │                                                         │
 │  OTP verification emails (owner login)                  │
-│  Contact form notification emails (new inquiries)       │
+│  Contact form notification emails                       │
 └─────────────────────────────────────────────────────────┘
 ```
-
-### 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── ContactForm.tsx        # Contact form with honeypot + Resend notification
-│   ├── RequireAuth.tsx        # Auth guard — redirects to /auth if not signed in
-│   ├── Scene3D.tsx            # Three.js / React Three Fiber 3D robot scene
-│   ├── TiltCard.tsx           # Tilt-effect card wrapper
-│   └── ui/                    # shadcn/ui components (button, card, input, etc.)
-├── convex/
-│   ├── auth.config.ts         # Convex auth provider configuration
-│   ├── auth.ts                # Auth providers (Email OTP)
-│   ├── auth/
-│   │   └── emailOtp.ts        # Email OTP provider with Resend integration
-│   ├── http.ts                # Custom HTTP routes for auth
-│   ├── messages.ts            # Messages query/mutation (inbox)
-│   ├── schema.ts              # Convex database schema
-│   ├── sendMessage.ts         # Contact form action (sends email via Resend)
-│   └── users.ts               # User query helper
-├── data/
-│   └── portfolio.ts           # All portfolio content (profile, experience, projects, skills)
-├── hooks/
-│   ├── use-auth.ts            # Auth hook (Convex Auth)
-│   └── use-mobile.ts          # Mobile detection hook
-├── lib/
-│   └── utils.ts               # Utility functions (cn, etc.)
-├── pages/
-│   ├── Auth.tsx               # Login page (email OTP)
-│   ├── Dashboard.tsx          # Owner inbox dashboard
-│   ├── Landing.tsx            # Main portfolio page
-│   └── NotFound.tsx           # 404 page
-├── index.css                  # Global styles + Tailwind
-├── instrumentation.tsx        # Error boundary + monitoring
-└── main.tsx                   # App entrypoint + providers
-```
-
-### 🎨 Design Philosophy
-
-- **Minimalism** — Clean, spacious, restrained. Near-monochrome palette with intentional whitespace.
-- **Centered Everything** — Every section, text block, and component is centered for consistency across all screen sizes.
-- **No Parallel Text** — Text and buttons are never placed side-by-side; everything stacks vertically for readability.
-- **Typography-First** — Strong typographic hierarchy using `font-display` for headings and `font-mono` for labels/meta.
-- **Subtle Motion** — Scroll-triggered Framer Motion animations that enhance without distracting.
-- **Responsive by Default** — Mobile-first design that works perfectly from 320px to 4K.
-
-### 🔒 Security
-
-| Measure | Implementation |
-|---------|----------------|
-| **Email Whitelist** | Only the owner email can log in — all other emails are rejected |
-| **No Guest Login** | Anonymous auth provider has been disabled |
-| **Server-Side Secrets** | `RESEND_API_KEY` is only accessed in `"use node"` Convex functions — never exposed to the client |
-| **Honeypot Spam Protection** | Hidden field in contact form catches automated bots |
-| **HTML Escaping** | All user input is escaped before being interpolated into notification emails |
-| **No Hardcoded Keys** | All API keys are read from environment variables via `process.env` |
-| **Convex Auth** | Industry-standard email OTP with 15-minute expiry — no passwords stored |
 
 ---
 
@@ -179,84 +131,53 @@ src/
 | Category | Technologies |
 |----------|-------------|
 | **Frontend** | React 19, TypeScript, Tailwind CSS v4, Framer Motion |
-| **3D** | Three.js / React Three Fiber (interactive robot scene) |
+| **3D** | Canvas API (dependency-free wireframe renderer) |
 | **Backend** | Convex (serverless DB + functions + auth + realtime) |
-| **Email** | Resend (OTP login emails + contact form notifications) |
-| **Auth** | Convex Auth — email OTP only (owner whitelist) |
-| **Database** | Convex (serverless, real-time, type-safe) |
-| **UI Components** | shadcn/ui + Radix UI primitives |
+| **Email** | Resend (OTP + contact notifications) |
+| **Auth** | Convex Auth — Email OTP (owner whitelist) |
+| **UI** | shadcn/ui + Radix UI primitives |
 | **Build** | Vite 7 + esbuild (manual chunk splitting) |
 | **Hosting** | Freebuff (managed hosting with auto-deploy) |
-| **PDF Generation** | jsPDF (client-side CV download) |
+| **PDF** | jsPDF (client-side CV generation) |
 
 ---
 
-## 📂 Featured Projects
+## 📁 Project Structure
 
-### 🔴 CIRO AI — Multi-Agent Crisis Response System
-> Built for AI Seekho Phase 2. Coordinated multiple AI agents to support crisis response workflows.
-> `Python` `Multi-Agent AI` `Orchestration`
-
-### 🌾 Kisaan Dost AI — Crop Disease Detector
-> AI-powered crop disease detection for Pakistani farmers using Google Gemini Vision. **Silver Tier Winner at Google AI Seekho 2026.**
-> `Google Gemini` `Python` `AI Vision`
-
-### 👗 AURELIA — Luxury Fashion E-Commerce
-> Full-stack luxury fashion platform built for Google Build with AI 2026. Deployed on Google Cloud Run.
-> `Next.js` `TypeScript` `Google Cloud Run`
-
-### 🧠 Personal AI Employee
-> Agentic personal-automation system with persistent memory, tiered Gmail/WhatsApp/LinkedIn automation, and social-posting capabilities.
-> `Python` `Qwen Code CLI` `Obsidian` `Automation`
-
----
-
-## 🏆 Achievements
-
-| Award | Description |
-|-------|-------------|
-| 🥈 **Silver Tier Winner** | Google AI Seekho 2026 — Kisaan Dost AI |
-| 🏆 **Startup Challenge Winner** | Neofyx won a startup challenge competition |
-| 📊 **Top 7% Ranked** | #21 of 319 participants in "Ramadan Prompting Nights" |
-| 🎓 **Y Combinator Applied** | Applied to Y Combinator Startup School 2026 with Neofyx |
-
----
-
-## 💼 Experience
-
-### Co-Founder & COO — Neofyx
-**2025 — Present** · Karachi, Pakistan
-
-- Co-leading an AI automation and SaaS startup alongside CEO and CTO functions
-- Driving product engineering as a hands-on full-stack and AI engineer
-- Owning client and project delivery — scoping requirements and translating business needs into technical solutions
-
-### Full-Stack & AI Engineer (Freelance)
-**2024 — Present** · Remote
-
-- Delivered website build-out for C.Ronaldo Sports on a Next.js stack
-- Designed n8n automation workflows for AI-generated video content and multi-platform publishing
-- Built multiple production web applications and AI-powered tools
-
----
-
-## 🎓 Education
-
-| Institution | Program | Status |
-|------------|---------|--------|
-| **University of Karachi** | BS Computational Mathematics | In Progress |
-| **GIAIC** (Governor's Initiative for AI & Computing) | Agentic AI and Python Track | In Progress |
-
----
-
-## 📊 Impact at a Glance
-
-| Metric | Value |
-|--------|-------|
-| Years of Experience | 2+ |
-| Projects Shipped | 10+ |
-| AI Models Integrated | 5+ |
-| Competitive Ranking | Top 7% |
+```
+src/
+├── components/
+│   ├── ContactForm.tsx        # Contact form with honeypot + Resend
+│   ├── RequireAuth.tsx        # Auth guard — redirects unauthenticated users
+│   ├── Scene3D.tsx            # Canvas-based 3D robot head
+│   ├── TiltCard.tsx           # Subtle 3D tilt effect wrapper
+│   └── ui/                    # shadcn/ui components
+├── convex/
+│   ├── auth.config.ts         # Auth provider configuration
+│   ├── auth.ts                # Auth providers (Email OTP)
+│   ├── auth/
+│   │   └── emailOtp.ts        # Email OTP with Resend + whitelist
+│   ├── http.ts                # HTTP routes for auth callbacks
+│   ├── messages.ts            # Messages query/mutation
+│   ├── schema.ts              # Database schema
+│   ├── sendMessage.ts         # Contact form action
+│   └── users.ts               # User query helper
+├── data/
+│   └── portfolio.ts           # All portfolio content (single source of truth)
+├── hooks/
+│   ├── use-auth.ts            # Auth hook
+│   └── use-mobile.ts          # Mobile detection
+├── lib/
+│   └── utils.ts               # Utility functions (cn)
+├── pages/
+│   ├── Auth.tsx               # Login page (email OTP)
+│   ├── Dashboard.tsx          # Owner inbox dashboard
+│   ├── Landing.tsx            # Main portfolio page
+│   └── NotFound.tsx           # 404 page
+├── index.css                  # Global styles + Tailwind theme
+├── instrumentation.tsx        # Error boundary + monitoring
+└── main.tsx                   # App entrypoint + providers
+```
 
 ---
 
@@ -265,7 +186,7 @@ src/
 ### Prerequisites
 
 - **Node.js** 18+ or **Bun** 1.0+
-- **Convex account** (free tier works) — [convex.dev](https://convex.dev)
+- **Convex account** (free tier) — [convex.dev](https://convex.dev)
 - **Resend account** (free tier: 100 emails/day) — [resend.com](https://resend.com)
 
 ### Installation
@@ -278,7 +199,7 @@ cd minimalist-portfolio-freebuff
 # Install dependencies
 bun install
 
-# Initialize Convex (first time only — creates your own Convex project)
+# Initialize Convex (first time only)
 bunx convex dev
 
 # In a separate terminal, start the dev server
@@ -289,34 +210,69 @@ Open [http://localhost:5173](http://localhost:5173) to view the portfolio.
 
 ### Environment Variables
 
-Set these in your **Convex dashboard** or via the hosting platform's Keys tab:
+Set these in your **Convex dashboard** or hosting platform's Keys tab:
 
-| Variable | Required | Where to Get | Purpose |
-|----------|----------|-------------|---------|
-| `RESEND_API_KEY` | Yes | [resend.com/api-keys](https://resend.com/api-keys) | Sends OTP login emails + contact form notifications |
-| `RESEND_FROM_EMAIL` | Yes | Use `onboarding@resend.dev` for free tier | Sender email address |
-
-> ⚠️ **Do not commit API keys.** These are server-side only and read via `process.env` in Convex actions.
+| Variable | Required | Purpose |
+|----------|----------|---------|
+| `RESEND_API_KEY` | Yes | Sends OTP login emails + contact notifications |
+| `RESEND_FROM_EMAIL` | Yes | Sender email (use `onboarding@resend.dev` for free tier) |
 
 ### Available Scripts
 
 | Command | Description |
 |---------|-------------|
 | `bun dev` | Start Vite development server |
-| `bun run build` | Typecheck + production build (`tsc -b && vite build`) |
-| `bun tsc -b --noEmit` | Typecheck only (no output) |
+| `bun run build` | Typecheck + production build |
+| `bun tsc -b --noEmit` | Typecheck only |
 | `bunx convex dev --once` | Push Convex functions + run codegen |
-| `bunx convex dev` | Start Convex in watch mode (interactive) |
+| `bunx convex dev` | Start Convex in watch mode |
 
 ### Deployment
 
-This project is deployed on **Freebuff** (managed hosting). To deploy:
+This project is deployed on **Freebuff**:
 
 1. Push to GitHub
 2. Connect the repo to Freebuff
 3. Click **Publish**
 
-Freebuff handles the build (`tsc -b && vite build`) and serves the app automatically.
+---
+
+## 📸 Screenshots
+
+See [SCREENSHOTS.md](SCREENSHOTS.md) for the complete screenshot checklist with viewport sizes and descriptions.
+
+| Screenshot | Viewport | Description |
+|-----------|----------|-------------|
+| Desktop hero | 1440px | Full landing page with 3D scene |
+| Desktop projects | 1440px | Project cards with tech tags |
+| Desktop contact | 1440px | Contact form and details |
+| Mobile landing | 375px | Responsive layout |
+| Mobile navigation | 375px | Wrapped nav links |
+| Mobile contact | 375px | Stacked form fields |
+
+---
+
+## 📄 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [REPORT.md](REPORT.md) | Full internship report with features, architecture, accessibility, SEO, and testing |
+| [SCREENSHOTS.md](SCREENSHOTS.md) | Screenshot checklist for submission |
+| [README.md](README.md) | This file — project overview and setup guide |
+
+---
+
+## 🔒 Security
+
+| Measure | Implementation |
+|---------|----------------|
+| Email Whitelist | Only owner email can log in |
+| Guest Login | Disabled — no anonymous auth |
+| Server-Side Secrets | All API keys via `process.env` in `"use node"` functions |
+| Honeypot Protection | Hidden field catches automated bots |
+| Rate Limiting | 5 submissions per hour per email |
+| HTML Escaping | User input escaped before email interpolation |
+| Origin Validation | postMessage whitelist for iframe communication |
 
 ---
 
@@ -333,5 +289,5 @@ Freebuff handles the build (`tsc -b && vite build`) and serves the app automatic
 ---
 
 <p align="center">
-  <i>Built with ❤️ by Afaq Ul Islam</i>
+  <i>Built with ❤️ by Afaq Ul Islam — Aptura Tech Solutions Batch 03</i>
 </p>

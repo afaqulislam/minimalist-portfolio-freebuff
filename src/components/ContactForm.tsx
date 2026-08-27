@@ -93,6 +93,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
+      aria-label="Contact form"
       className="mx-auto flex h-full w-full max-w-2xl flex-col gap-6 rounded-none border border-border bg-card p-6 sm:p-8"
     >
       {/* Honeypot — hidden from humans, tempting for spam bots. */}

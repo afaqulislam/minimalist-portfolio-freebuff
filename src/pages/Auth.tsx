@@ -87,9 +87,8 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
   return (
     <div className="min-h-screen flex flex-col">
 
-      
       {/* Auth Content */}
-      <div className="flex-1 flex items-center justify-center px-4 py-8">
+      <main className="flex-1 flex items-center justify-center px-4 py-8">
         <div className="flex items-center justify-center h-full flex-col w-full">
         <Button
           type="button"
@@ -107,7 +106,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
               <div className="flex justify-center">
                     <img
                       src="/logo.svg"
-                      alt="Lock Icon"
+                      alt="Afaq Ul Islam — back to portfolio"
                       width={64}
                       height={64}
                       className="rounded-lg mb-4 mt-4 cursor-pointer"
@@ -255,7 +254,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
           </div>
         </Card>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
